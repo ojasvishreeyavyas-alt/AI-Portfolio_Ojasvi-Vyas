@@ -4,191 +4,251 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ojasvi Vyas | AI Solutions & Automation Strategist</title>
-  <meta name="description" content="A portfolio of AI-powered business research, custom GPTs, workflow automation, content systems, and generative AI experiments by Ojasvi Vyas.">
+  <meta name="description" content="Ideas remain original. Let your mind do the creativity, let AI do the repetitive tasks. AI Portfolio by Ojasvi Vyas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07090e;
-      --surface: #0f131d;
-      --surface-hover: #161c2a;
-      --border: #1e2638;
-      --text: #f8fafc;
-      --text-muted: #94a3b8;
-      --accent: #38bdf8;
-      --accent-glow: rgba(56, 189, 248, 0.12);
-      --emerald: #34d399;
-      --emerald-bg: rgba(52, 211, 153, 0.1);
-      --amber: #fbbf24;
-      --amber-bg: rgba(251, 191, 36, 0.1);
-      --purple: #c084fc;
-      --purple-bg: rgba(192, 132, 252, 0.1);
+      --bg-page: #faf8f5;
+      --bg-card: #ffffff;
+      --bg-subtle: #f3efe9;
+      --border: #e6e0d6;
+      --border-hover: #c8beaf;
+      --text-dark: #141619;
+      --text-body: #4a5058;
+      --text-muted: #787f87;
+      --slate-blue: #4c6c7c;
+      --warm-gold: #c9935b;
+      --btn-dark: #141619;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: var(--bg);
-      color: var(--text);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-dark);
       line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navbar */
+    /* Top Navigation (Thinkly AI Style) */
     nav {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(7, 9, 14, 0.85);
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 1rem 1.5rem;
+      border-bottom: 1px solid rgba(20, 22, 25, 0.07);
+      padding: 0.95rem 2rem;
     }
     .nav-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
       font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: -0.02em;
-      color: var(--text);
+      font-size: 1.05rem;
+      color: var(--text-dark);
       text-decoration: none;
+      letter-spacing: -0.02em;
     }
-    .brand span { color: var(--accent); }
+    .brand-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      background: var(--btn-dark);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.85rem;
+    }
     .nav-links {
       display: flex;
-      gap: 1.5rem;
-      font-size: 0.9rem;
+      gap: 2.25rem;
+      align-items: center;
+      font-size: 0.92rem;
+      font-weight: 500;
     }
-    .nav-links a {
-      color: var(--text-muted);
+    .nav-links a:not(.btn-pill) {
+      color: var(--text-body);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--text); }
-
-    /* Layout */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
+    .nav-links a:not(.btn-pill):hover {
+      color: var(--text-dark);
     }
-
-    /* Hero */
-    .hero {
-      padding: 5rem 0 3.5rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .eyebrow {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--accent);
-      background: var(--accent-glow);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      padding: 0.35rem 0.75rem;
-      border-radius: 99px;
-      display: inline-block;
-      margin-bottom: 1.25rem;
-    }
-    .hero h1 {
-      font-size: clamp(2.25rem, 5vw, 3.5rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
-    .hero-sub {
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      max-width: 780px;
-      margin-bottom: 2rem;
-    }
-    .cta-group {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.75rem 1.4rem;
+    .btn-pill {
+      background: var(--btn-dark);
+      color: #ffffff;
+      padding: 0.6rem 1.25rem;
       border-radius: 8px;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       text-decoration: none;
-      transition: all 0.2s;
-      cursor: pointer;
-      border: none;
-    }
-    .btn-primary {
-      background: var(--accent);
-      color: #060911;
-    }
-    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
-    .btn-outline {
-      background: var(--surface);
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-    .btn-outline:hover { border-color: var(--text-muted); }
-
-    /* Filter Bar */
-    .filter-section {
-      padding: 2.5rem 0 1.5rem 0;
-      display: flex;
-      justify-content: space-between;
+      display: inline-flex;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
     }
-    .filter-tabs {
+    .btn-pill:hover {
+      background: #2b2f36;
+      transform: translateY(-1px);
+    }
+
+    /* Atmospheric Sunset & Slate-Sky Hero */
+    .hero-wrapper {
+      padding: 0 1.25rem;
+      margin-top: 1rem;
+    }
+    .hero {
+      max-width: 1240px;
+      margin: 0 auto;
+      border-radius: 18px;
+      padding: 6.5rem 2rem 5.5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      background: 
+        radial-gradient(circle at 25% 75%, rgba(238, 193, 140, 0.85) 0%, rgba(218, 178, 138, 0.35) 45%, transparent 75%),
+        linear-gradient(135deg, #b8aba1 0%, #8ea4b2 48%, #567586 100%);
+      box-shadow: 0 20px 50px rgba(20, 22, 25, 0.08);
+      color: #ffffff;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(20, 22, 25, 0.08), rgba(20, 22, 25, 0.28));
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 0.4rem 1rem;
+      border-radius: 99px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      margin-bottom: 1.75rem;
+    }
+    .hero h1 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: #fffdf9;
+    }
+    .hero-sub {
+      font-size: 1.12rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.92);
+      max-width: 670px;
+      margin: 0 auto 2.5rem auto;
+      line-height: 1.65;
+    }
+
+    /* Floating Action Bar (Thinkly Input Style) */
+    .hero-bar {
+      background: #ffffff;
+      padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 1.25rem;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .hero-bar-text {
+      color: var(--text-body);
+      font-size: 0.92rem;
+      font-weight: 500;
+    }
+    .hero-bar-actions {
       display: flex;
       gap: 0.5rem;
       flex-wrap: wrap;
     }
-    .filter-btn {
-      background: var(--surface);
-      color: var(--text-muted);
-      border: 1px solid var(--border);
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s;
+    .btn-light {
+      background: var(--bg-subtle);
+      color: var(--text-dark);
+      padding: 0.6rem 1.15rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      text-decoration: none;
+      transition: background 0.2s;
     }
-    .filter-btn:hover, .filter-btn.active {
-      background: var(--accent-glow);
-      color: var(--accent);
-      border-color: rgba(56, 189, 248, 0.4);
+    .btn-light:hover {
+      background: #e5dfd5;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 4.5rem 1.5rem 6rem 1.5rem;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    .section-header h2 {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.75rem;
+      font-weight: 400;
+      color: var(--text-dark);
+      margin-bottom: 0.5rem;
+    }
+    .section-header p {
+      color: var(--text-body);
+      font-size: 1.02rem;
     }
 
     /* Project Cards */
-    .projects-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      padding-bottom: 4rem;
+    .projects-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 2.75rem;
     }
     .project-card {
-      background: var(--surface);
+      background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 2.25rem;
-      transition: border-color 0.25s, transform 0.25s;
+      border-radius: 18px;
+      padding: 2.75rem;
+      box-shadow: 0 8px 30px rgba(20, 22, 25, 0.03);
+      transition: border-color 0.25s, box-shadow 0.25s;
     }
     .project-card:hover {
-      border-color: rgba(56, 189, 248, 0.35);
+      border-color: var(--border-hover);
+      box-shadow: 0 14px 40px rgba(20, 22, 25, 0.06);
     }
-    .card-top {
+    .card-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -196,529 +256,431 @@
       flex-wrap: wrap;
       margin-bottom: 1.25rem;
     }
-    .proj-num {
+    .proj-number {
       font-family: 'JetBrains Mono', monospace;
-      color: var(--accent);
-      font-size: 0.85rem;
-      font-weight: 500;
-      display: block;
-      margin-bottom: 0.25rem;
-    }
-    .proj-title {
-      font-size: 1.5rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-    }
-    .badge-status {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      padding: 0.3rem 0.7rem;
-      border-radius: 6px;
-      white-space: nowrap;
-    }
-    .status-live {
-      background: var(--emerald-bg);
-      color: var(--emerald);
-      border: 1px solid rgba(52, 211, 153, 0.25);
-    }
-    .status-workflow {
-      background: var(--accent-glow);
-      color: var(--accent);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-    }
-    .status-concept {
-      background: var(--purple-bg);
-      color: var(--purple);
-      border: 1px solid rgba(192, 132, 252, 0.25);
-    }
-    .status-creative {
-      background: var(--amber-bg);
-      color: var(--amber);
-      border: 1px solid rgba(251, 191, 36, 0.25);
-    }
-
-    .proj-summary {
-      color: var(--text);
-      font-size: 1.02rem;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Two-column details inside card */
-    .details-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 1.75rem;
-      background: rgba(7, 9, 14, 0.5);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-    }
-    @media (max-width: 768px) {
-      .details-grid { grid-template-columns: 1fr; }
-    }
-    .detail-block h4 {
       font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--text-muted);
-      margin-bottom: 0.6rem;
+      letter-spacing: 0.08em;
+      color: var(--slate-blue);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.35rem;
     }
-    .detail-block p {
-      font-size: 0.92rem;
-      color: var(--text-muted);
+    .proj-title {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.25rem;
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--text-dark);
     }
-    .detail-list {
+    .status-pill {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      background: var(--bg-subtle);
+      color: var(--text-dark);
+      border: 1px solid var(--border);
+    }
+
+    .proj-lead {
+      font-size: 1.1rem;
+      color: var(--text-body);
+      margin-bottom: 1.75rem;
+      max-width: 860px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.75rem;
+    }
+    @media (max-width: 768px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .project-card { padding: 1.75rem; }
+      .nav-links a:not(.btn-pill) { display: none; }
+    }
+    .info-col h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 0.65rem;
+    }
+    .info-col p {
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+    .feature-list {
       list-style: none;
     }
-    .detail-list li {
-      font-size: 0.92rem;
-      color: var(--text-muted);
+    .feature-list li {
+      font-size: 0.95rem;
+      color: var(--text-body);
       position: relative;
-      padding-left: 1.1rem;
-      margin-bottom: 0.45rem;
+      padding-left: 1.25rem;
+      margin-bottom: 0.5rem;
     }
-    .detail-list li::before {
-      content: "→";
+    .feature-list li::before {
+      content: "✦";
       position: absolute;
       left: 0;
-      color: var(--accent);
-      font-size: 0.85rem;
+      color: var(--warm-gold);
+      font-size: 0.8rem;
     }
-    .detail-list strong { color: var(--text); }
 
-    /* Pipeline Diagram */
-    .pipeline-flow {
+    /* Workflow Steps */
+    .workflow-bar {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1.25rem 0;
-      padding: 1rem;
-      background: #0a0d14;
-      border: 1px dashed var(--border);
-      border-radius: 8px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-    }
-    .flow-step {
-      background: var(--surface-hover);
-      color: var(--text);
-      padding: 0.35rem 0.65rem;
-      border-radius: 4px;
+      gap: 0.6rem;
+      padding: 1.1rem 1.25rem;
+      background: var(--bg-subtle);
       border: 1px solid var(--border);
+      border-radius: 10px;
+      margin-bottom: 1.75rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
     }
-    .flow-arrow { color: var(--accent); }
+    .wf-node {
+      background: #ffffff;
+      color: var(--text-dark);
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-weight: 500;
+    }
+    .wf-arrow {
+      color: var(--warm-gold);
+      font-weight: bold;
+    }
 
-    /* Outcome & Credibility Footer */
-    .outcome-bar {
-      background: rgba(56, 189, 248, 0.04);
-      border-left: 3px solid var(--accent);
-      padding: 0.85rem 1.1rem;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.9rem;
+    /* 3D Showcase Media Grid */
+    .media-showcase {
+      margin: 1.75rem 0;
+    }
+    .media-showcase-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
       color: var(--text-muted);
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
     }
-    .outcome-bar strong { color: var(--text); }
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+    @media (max-width: 680px) {
+      .media-grid { grid-template-columns: 1fr; }
+    }
+    .media-item {
+      background: #0d0f12;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+    .media-item video,
+    .media-item img {
+      width: 100%;
+      height: 290px;
+      object-fit: cover;
+      display: block;
+      background: #090a0f;
+    }
+    .media-caption {
+      padding: 0.75rem 1rem;
+      background: #141619;
+      color: #e2e8f0;
+      font-size: 0.82rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .media-caption span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #eab308;
+    }
 
-    .tags-row {
+    /* Card Footer */
+    .card-footer {
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
-      padding-top: 1.25rem;
+      padding-top: 1.5rem;
       border-top: 1px solid var(--border);
     }
-    .tech-tags {
+    .tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 0.45rem;
+      gap: 0.5rem;
     }
-    .tech-tag {
-      font-size: 0.76rem;
+    .tag {
       font-family: 'JetBrains Mono', monospace;
-      background: #161d2b;
-      color: #cbd5e1;
-      padding: 0.25rem 0.6rem;
-      border-radius: 4px;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      background: var(--bg-subtle);
+      color: var(--text-body);
     }
 
     footer {
-      border-top: 1px solid var(--border);
-      padding: 3rem 0;
       text-align: center;
+      padding: 3.5rem 1.5rem;
+      border-top: 1px solid var(--border);
       color: var(--text-muted);
       font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--text-dark);
+      font-weight: 600;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
 
+  <!-- Navigation -->
   <nav>
     <div class="nav-container">
-      <a href="#" class="brand">OJASVI VYAS<span>.AI</span></a>
+      <a href="#" class="brand">
+        <span class="brand-icon">✦</span>
+        Ojasvi Vyas
+      </a>
       <div class="nav-links">
-        <a href="#projects">Projects (08)</a>
-        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
-        <a href="mailto:your-email@example.com">Contact</a>
+        <a href="#opportunity-desk">Opportunity Desk</a>
+        <a href="#content-pipeline">Content Pipeline</a>
+        <a href="#product-films">3D Product Films</a>
+        <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-pill">
+          LinkedIn Profile ✦
+        </a>
       </div>
     </div>
   </nav>
 
-  <div class="container">
-    <!-- Hero Section -->
+  <!-- Hero Section -->
+  <div class="hero-wrapper">
     <section class="hero">
-      <span class="eyebrow">AI Solutions &amp; Automation Strategist</span>
-      <h1>AI Automation &amp; Intelligent Systems</h1>
-      <p class="hero-sub">
-        I design practical AI-assisted systems that help businesses discover opportunities, structure research, automate repetitive workflows, and turn information into actionable decisions.
-      </p>
-      <div class="cta-group">
-        <a href="#projects" class="btn btn-primary">Explore Selected Projects</a>
-        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+      <div class="hero-content">
+        <span class="hero-eyebrow">Ojasvi Vyas &bull; AI Solutions &amp; Automation Strategist</span>
+        <h1>Ideas remain original.<br><em>Let your mind do the creativity,</em> let AI do the repetitive tasks.</h1>
+        <p class="hero-sub">
+          Building high-leverage B2B opportunity networks, autonomous content research pipelines, and generative 3D commercial storytelling.
+        </p>
+
+        <div class="hero-bar">
+          <span class="hero-bar-text">Explore live systems &amp; connect directly:</span>
+          <div class="hero-bar-actions">
+            <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-pill">
+              Launch Opportunity Desk ✦
+            </a>
+            <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-light">
+              LinkedIn
+            </a>
+            <a href="mailto:ojasvishreeyavyas@gmail.com" class="btn-light">
+              Email Me
+            </a>
+          </div>
+        </div>
       </div>
     </section>
+  </div>
 
-    <!-- Filter Navigation -->
-    <section id="projects" class="filter-section">
-      <div class="filter-tabs">
-        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (8)</button>
-        <button class="filter-btn" onclick="filterProjects('b2b', this)">B2B Intelligence &amp; Agents</button>
-        <button class="filter-btn" onclick="filterProjects('automation', this)">Workflows &amp; Content</button>
-        <button class="filter-btn" onclick="filterProjects('creative', this)">Creative &amp; Product Concepts</button>
-      </div>
-    </section>
+  <!-- Selected Projects -->
+  <div class="container">
+    <div class="section-header">
+      <h2>Selected Works &amp; Systems</h2>
+      <p>Three focused pillars across B2B intelligence, workflow automation, and luxury generative production.</p>
+    </div>
 
-    <!-- Projects Grid -->
-    <div class="projects-grid">
+    <div class="projects-stack">
 
-      <!-- 01. Opportunity Desk -->
-      <article class="project-card" data-category="b2b">
-        <div class="card-top">
+      <!-- 01. The Opportunity Desk -->
+      <article id="opportunity-desk" class="project-card">
+        <div class="card-header">
           <div>
-            <span class="proj-num">PROJECT 01 // CORE PRODUCT &amp; GTM SERVICE</span>
-            <h2 class="proj-title">Opportunity Desk</h2>
+            <span class="proj-number">01 // B2B OPPORTUNITY INTELLIGENCE</span>
+            <h3 class="proj-title">The Opportunity Desk</h3>
           </div>
-          <span class="badge-status status-live">Core Product / Service Built</span>
+          <span class="status-pill">Live Platform</span>
         </div>
-        <p class="proj-summary">
-          An AI-powered B2B opportunity intelligence platform and go-to-market support service designed to help founder-led businesses identify relevant buyers, strategic partners, communities, and revenue channels.
+
+        <p class="proj-lead">
+          Sits on a vast global intelligence network capable of finding virtually anyone from anywhere for a founder or business—whether high-intent clients, regional distributors, or specialized manufacturers.
         </p>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>Business Problem</h4>
-            <p>Founders and small teams spend substantial time searching for prospects and partners, often facing inconsistent qualification criteria and limited context for effective outreach.</p>
+
+        <div class="info-grid">
+          <div class="info-col">
+            <h4>The Core Advantage</h4>
+            <p>Founders lose months trying to manually source verified supply-chain partners, niche distributors, or enterprise buyers across geographies. The Opportunity Desk turns fragmented global data into ready-to-act commercial pipelines.</p>
           </div>
-          <div class="detail-block">
-            <h4>System Capabilities &amp; Approach</h4>
-            <ul class="detail-list">
-              <li>Structures custom opportunity pipelines around a specific target market, ICP, or revenue objective.</li>
-              <li>Identifies direct buyers, strategic partners, and relevant industry communities.</li>
-              <li>Combines AI-assisted company synthesis with human quality control for contact discovery and outreach rationale.</li>
+          <div class="info-col">
+            <h4>What It Delivers</h4>
+            <ul class="feature-list">
+              <li><strong>Global Partner &amp; Buyer Discovery:</strong> Pinpoints exact-fit clients, distributors, and manufacturers across domestic and international markets.</li>
+              <li><strong>Qualification &amp; Context:</strong> Filters out noise using strict ICP gates, delivering verified decision-maker context and tailored outreach angles.</li>
+              <li><strong>Proven Traction:</strong> Built to cut prospecting time by ~50% while unlocking high-converting B2B conversations.</li>
             </ul>
           </div>
         </div>
-        <div class="outcome-bar">
-          <strong>Client-Reported Outcomes &amp; Deliverable Impact:</strong> Referenced project outcomes include 20+ sales conversations generated in a month, ~50% reduction in prospecting time, and estimated research savings of ₹15,000–₹20,000.
+
+        <div class="card-footer">
+          <div class="tags">
+            <span class="tag">Global B2B Sourcing</span>
+            <span class="tag">Client &amp; Distributor Discovery</span>
+            <span class="tag">Manufacturer Networks</span>
+            <span class="tag">AI Opportunity Intelligence</span>
+          </div>
+          <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-pill">
+            Visit Live Website &rarr;
+          </a>
         </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">AI Research Synthesis</span>
-            <span class="tech-tag">ICP &amp; Persona Design</span>
-            <span class="tech-tag">B2B Prospect Discovery</span>
-            <span class="tech-tag">Opportunity Pipeline Design</span>
-            <span class="tech-tag">GTM Strategy</span>
+      </article>
+
+      <!-- 02. AI Content Research Pipeline -->
+      <article id="content-pipeline" class="project-card">
+        <div class="card-header">
+          <div>
+            <span class="proj-number">02 // AUTONOMOUS CONTENT SYSTEMS</span>
+            <h3 class="proj-title">AI Content Research Pipeline</h3>
+          </div>
+          <span class="status-pill">Workflow Automation</span>
+        </div>
+
+        <p class="proj-lead">
+          End-to-end automated workflows that handle trend analysis, high-signal idea selection, structured drafting, and workspace organization—freeing human minds to focus purely on original creative direction.
+        </p>
+
+        <div class="workflow-bar">
+          <span class="wf-node">01. Trend Analysis &amp; Scraping</span>
+          <span class="wf-arrow">&rarr;</span>
+          <span class="wf-node">02. AI Scoring &amp; Top-3 Idea Selection</span>
+          <span class="wf-arrow">&rarr;</span>
+          <span class="wf-node">03. Structured Drafting</span>
+          <span class="wf-arrow">&rarr;</span>
+          <span class="wf-node">04. Google Docs / Sheets Organization</span>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-col">
+            <h4>The Bottleneck</h4>
+            <p>Creative teams spend 70% of their bandwidth on repetitive research, tracking trends across tabs, sorting spreadsheets, and formatting initial drafts before real creative work even begins.</p>
+          </div>
+          <div class="info-col">
+            <h4>Workflow Architecture</h4>
+            <ul class="feature-list">
+              <li><strong>Automated Trend Analysis:</strong> Scrapes and aggregates emerging topic signals into a centralized Google Sheets repository.</li>
+              <li><strong>Intelligent Idea Selection:</strong> Evaluates candidate topics against audience relevance and isolates the top three highest-potential ideas per sprint.</li>
+              <li><strong>Drafting &amp; Organization:</strong> Generates structured first drafts and automatically organizes files in Google Docs and Drive for human editorial polish.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="tags">
+            <span class="tag">Trend Analysis</span>
+            <span class="tag">Automated Idea Selection</span>
+            <span class="tag">AI Drafting Pipelines</span>
+            <span class="tag">Google Workspace Automation</span>
           </div>
         </div>
       </article>
 
-      <!-- 02. AI Lead Research & Qualification Automation -->
-      <article class="project-card" data-category="b2b automation">
-        <div class="card-top">
+      <!-- 03. AI-Assisted 3D Product Films -->
+      <article id="product-films" class="project-card">
+        <div class="card-header">
           <div>
-            <span class="proj-num">PROJECT 02 // PROSPECT SOURCING &amp; QUALIFICATION</span>
-            <h2 class="proj-title">AI Lead Research &amp; Qualification Automation</h2>
+            <span class="proj-number">03 // GENERATIVE LUXURY PRODUCTION</span>
+            <h3 class="proj-title">AI-Assisted 3D Product Films</h3>
           </div>
-          <span class="badge-status status-workflow">Workflow Architecture</span>
+          <span class="status-pill">Creative &amp; Commercial</span>
         </div>
-        <p class="proj-summary">
-          A repeatable prospecting workflow concept designed to collect raw business records, enrich company data, apply LLM-based qualification rules, and output prioritized lead sheets with human review checkpoints.
-        </p>
-        <div class="pipeline-flow">
-          <span class="flow-step">Discovery Sources / Apify</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Structured Sheet / DB</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">LLM ICP Qualification Gate</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Human Verification</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Prioritized Outreach List</span>
-        </div>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>Business Problem</h4>
-            <p>Manual lead sourcing is slow and prone to inconsistent filtering. Sales teams need a structured method to check company fit against explicit inclusion and exclusion criteria.</p>
-          </div>
-          <div class="detail-block">
-            <h4>What the Workflow Does</h4>
-            <ul class="detail-list">
-              <li>Collects candidate business records from search and directory discovery sources.</li>
-              <li>Evaluates fit using an AI model guided by strict ICP rules and rejection gates.</li>
-              <li>Outputs fit rationale, source evidence, and follow-up priority while retaining human review for final contact verification.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">Apify (Data Collection)</span>
-            <span class="tech-tag">LLM Qualification Prompts</span>
-            <span class="tech-tag">n8n (Orchestration Design)</span>
-            <span class="tech-tag">Google Sheets / Airtable</span>
-          </div>
-        </div>
-      </article>
 
-      <!-- 03. Custom GPTs & Specialized Buyer-Finding Agents -->
-      <article class="project-card" data-category="b2b">
-        <div class="card-top">
-          <div>
-            <span class="proj-num">PROJECT 03 // SPECIALIZED RESEARCH ASSISTANTS</span>
-            <h2 class="proj-title">Custom GPTs &amp; Specialized Buyer-Finding Agents</h2>
-          </div>
-          <span class="badge-status status-live">6 Specialized Assistants Built</span>
-        </div>
-        <p class="proj-summary">
-          A suite of purpose-built research GPTs engineered with domain-specific instructions, geographic boundaries, hard qualification gates, and structured output templates.
+        <p class="proj-lead">
+          Combining generative visual tools, macro 3D product rendering, and cinematic art direction to craft high-impact commercial storytelling for luxury timepieces and premium brands.
         </p>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>Business Problem</h4>
-            <p>Generic LLM prompts frequently return loosely relevant companies, unverified assumptions, or incomplete prospect lists. Dedicated agents enforce strict inclusion/rejection rules.</p>
-          </div>
-          <div class="detail-block">
-            <h4>Agents Developed</h4>
-            <ul class="detail-list">
-              <li><strong>Silver Tsunami Buyer Finder:</strong> Researches US acquisition buyers (brokers, PE firms, operator buyers) segmented by buyer type and size.</li>
-              <li><strong>LA Off-Market Buyer Finder:</strong> Targets Greater Los Angeles manufacturing and distribution businesses using strict geographic and industry filters.</li>
-              <li><strong>Vinacamon Buyer Finder:</strong> Identifies US and European buyers for a Vietnam-based enterprise under strict contact-quality gates.</li>
-              <li><strong>Core GTM Suite:</strong> ICP Builder GPT, Email Leads Finder GPT, and Deep ICP &amp; Buyer Intelligence GPT.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="outcome-bar">
-          <strong>Key Deliverable Evidence:</strong> Produced a comprehensive Silver Tsunami research artifact detailing 20 qualified US acquisition buyers complete with websites, criteria fit, relevance scores, and custom outreach angles.
-        </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">Custom GPT Architecture</span>
-            <span class="tech-tag">Hard Qualification Gates</span>
-            <span class="tech-tag">Geographic &amp; Sector Filtering</span>
-            <span class="tech-tag">Public-Source Verification</span>
-          </div>
-        </div>
-      </article>
 
-      <!-- 04. AI Content Research & Generation Pipeline -->
-      <article class="project-card" data-category="automation">
-        <div class="card-top">
-          <div>
-            <span class="proj-num">PROJECT 04 // CONTENT SYSTEMS ARCHITECTURE</span>
-            <h2 class="proj-title">AI Content Research &amp; Generation Pipeline</h2>
-          </div>
-          <span class="badge-status status-workflow">Workflow Architecture</span>
-        </div>
-        <p class="proj-summary">
-          An end-to-end content workflow architecture designed to connect trend collection, AI-assisted topic scoring, draft generation, and automated document organization with human editorial oversight.
-        </p>
-        <div class="pipeline-flow">
-          <span class="flow-step">Idea Scraper</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Google Sheets Repo</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">AI Trend Analyzer (Top 3)</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">AI Draft Generator</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">Google Docs / Drive + Editorial Review</span>
-        </div>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>Business Problem</h4>
-            <p>Content production often suffers from fragmented handoffs across trend research, topic selection, initial drafting, and asset management.</p>
-          </div>
-          <div class="detail-block">
-            <h4>Pipeline Mechanics</h4>
-            <ul class="detail-list">
-              <li>Scrapes and centralizes candidate topics into Google Sheets.</li>
-              <li>Applies an AI trend analyzer to score and select the top 3 ideas for the upcoming content sprint.</li>
-              <li>Generates structured first drafts saved automatically to Google Docs/Drive while keeping human editorial review in the loop before publishing.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">Trend Analysis</span>
-            <span class="tech-tag">Generative AI Drafting</span>
-            <span class="tech-tag">Google Sheets &amp; Docs</span>
-            <span class="tech-tag">Editorial Workflow Design</span>
-          </div>
-        </div>
-      </article>
+        <!-- Embedded Media Showcase -->
+        <div class="media-showcase">
+          <div class="media-showcase-title">Featured Luxury Timepiece Films &amp; Royal Visual Renders</div>
+          <div class="media-grid">
+            <!-- Video 1: Invicta Skeleton Watch -->
+            <div class="media-item">
+              <video controls playsinline preload="metadata">
+                <source src="watch-film-1.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              <div class="media-caption">
+                <strong>Iridescent Skeleton Tourbillon (Invicta)</strong>
+                <span>3D + AI Motion Film</span>
+              </div>
+            </div>
 
-      <!-- 05. Understanding Gita -->
-      <article class="project-card" data-category="automation creative">
-        <div class="card-top">
-          <div>
-            <span class="proj-num">PROJECT 05 // EDUCATIONAL CONTENT VENTURE</span>
-            <h2 class="proj-title">Understanding Gita — Modern Workplace Guidance</h2>
-          </div>
-          <span class="badge-status status-live">Content Channel / Venture</span>
-        </div>
-        <p class="proj-summary">
-          An educational content channel and course concept translating classical Bhagavad Gita philosophy into concise, actionable frameworks for corporate professionals.
-        </p>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>The Challenge</h4>
-            <p>Traditional philosophical texts often feel disconnected from high-pressure corporate decision-making and modern workplace challenges.</p>
-          </div>
-          <div class="detail-block">
-            <h4>Strategy &amp; AI Integration</h4>
-            <ul class="detail-list">
-              <li>Develops relatable workplace themes and translates complex Sanskrit philosophy into short-form video scripts.</li>
-              <li>Uses AI selectively for topic ideation, initial script structuring, and cross-format content repurposing.</li>
-              <li>Structured for both short-form social distribution and modular educational courses.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="outcome-bar">
-          <strong>Early Channel Traction:</strong> Generated 11,000+ views across 22 short-form videos within an initial two-week publishing sprint.
-        </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">Content Strategy</span>
-            <span class="tech-tag">AI-Assisted Ideation &amp; Scripting</span>
-            <span class="tech-tag">Short-Form Video</span>
-            <span class="tech-tag">Course Packaging</span>
-          </div>
-        </div>
-      </article>
+            <!-- Video 2: Precision In Every Second -->
+            <div class="media-item">
+              <video controls playsinline preload="metadata">
+                <source src="watch-film-2.mp4" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video>
+              <div class="media-caption">
+                <strong>"Precision in Every Second" Monolith</strong>
+                <span>Macro Commercial Spot</span>
+              </div>
+            </div>
 
-      <!-- 06. AI-Assisted 3D Product Films -->
-      <article class="project-card" data-category="creative">
-        <div class="card-top">
-          <div>
-            <span class="proj-num">PROJECT 06 // GENERATIVE VISUAL PRODUCTION</span>
-            <h2 class="proj-title">AI-Assisted 3D Product Films</h2>
-          </div>
-          <span class="badge-status status-creative">Creative Commercial Workflow</span>
-        </div>
-        <p class="proj-summary">
-          A hybrid production workflow for luxury watches and premium goods that combines 3D product rendering, visual direction, and generative AI video and voice tools.
-        </p>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>Business Problem</h4>
-            <p>Luxury and D2C brands require high-end cinematic product storytelling, which traditionally demands expensive physical shoots and lengthy post-production timelines.</p>
-          </div>
-          <div class="detail-block">
-            <h4>Production Approach</h4>
-            <ul class="detail-list">
-              <li>Translates brand briefs into macro storyboards and cinematic camera sequences.</li>
-              <li>Integrates generative visual/motion tools (Runway, Pika Labs, Krea.ai) and AI voice synthesis (ElevenLabs, PlayHT) alongside custom 3D rendering and manual post-production.</li>
-            </ul>
-          </div>
-        </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">3D Product Rendering</span>
-            <span class="tech-tag">Runway</span>
-            <span class="tech-tag">Pika Labs</span>
-            <span class="tech-tag">Krea.ai</span>
-            <span class="tech-tag">ElevenLabs / PlayHT</span>
-          </div>
-        </div>
-      </article>
+            <!-- Image 1: Royal Rose Gold Chronograph -->
+            <div class="media-item">
+              <img src="watch-royal-1.png" alt="Rolersonie Rose Gold Chronograph Watch Render">
+              <div class="media-caption">
+                <strong>Rose-Gold &amp; Alligator Chronograph</strong>
+                <span>Studio Split-Light Render</span>
+              </div>
+            </div>
 
-      <!-- 07. Bhagavad Gita Guidance App -->
-      <article class="project-card" data-category="creative">
-        <div class="card-top">
-          <div>
-            <span class="proj-num">PROJECT 07 // GUIDED-RESPONSE PRODUCT CONCEPT</span>
-            <h2 class="proj-title">Bhagavad Gita Guidance App (Listener → Resolver → Track)</h2>
-          </div>
-          <span class="badge-status status-concept">Early-Stage MVP Concept</span>
-        </div>
-        <p class="proj-summary">
-          A structured three-stage product concept designed to let users input a real-world personal or professional dilemma and receive mapped, actionable reflection steps.
-        </p>
-        <div class="pipeline-flow">
-          <span class="flow-step">01. Listener (Capture User Dilemma)</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">02. Resolver (Map to Gita Framework)</span>
-          <span class="flow-arrow">→</span>
-          <span class="flow-step">03. Track (Structured Action Path)</span>
-        </div>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>User Need</h4>
-            <p>Users seeking philosophical clarity want immediate, situation-specific reflection and action steps rather than browsing unindexed chapters.</p>
-          </div>
-          <div class="detail-block">
-            <h4>MVP Architecture</h4>
-            <ul class="detail-list">
-              <li>Designed around a deterministic, manually mapped response architecture in Adalo for the initial MVP to guarantee philosophical accuracy.</li>
-              <li>Scoped for future AI-assisted intent classification once core response pathways are validated.</li>
-            </ul>
+            <!-- Image 2: Royal Velvet Pillow Timepiece -->
+            <div class="media-item">
+              <img src="watch-royal-2.png" alt="Luxury Gold Watch on Burgundy Velvet Cushion">
+              <div class="media-caption">
+                <strong>Sapphire-Bezel Heritage Timepiece</strong>
+                <span>Royal Editorial Concept</span>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">Adalo (MVP Planning)</span>
-            <span class="tech-tag">Conversation-Flow Design</span>
-            <span class="tech-tag">Response Mapping</span>
-            <span class="tech-tag">Product Architecture</span>
-          </div>
-        </div>
-      </article>
 
-      <!-- 08. Founder Support Knowledge Tools -->
-      <article class="project-card" data-category="b2b creative">
-        <div class="card-top">
-          <div>
-            <span class="proj-num">PROJECT 08 // SPECIALIZED FOUNDER ASSISTANTS</span>
-            <h2 class="proj-title">Founder Support Knowledge Tools</h2>
+        <div class="info-grid">
+          <div class="info-col">
+            <h4>Creative Direction</h4>
+            <p>Delivers agency-grade luxury visuals—from brushed metallic dial reflections and iridescent skeleton movements to regal velvet editorial staging—without the overhead of traditional physical studio shoots.</p>
           </div>
-          <span class="badge-status status-concept">Exploratory Concept Suite</span>
-        </div>
-        <p class="proj-summary">
-          An exploratory library of structured operating playbooks and role-specific AI assistant concepts built to support recurring founder bottlenecks.
-        </p>
-        <div class="details-grid">
-          <div class="detail-block">
-            <h4>Business Problem</h4>
-            <p>Early-stage founders regularly handle sales coaching, marketing strategy, pitch deck reviews, and SOP creation without dedicated department heads.</p>
-          </div>
-          <div class="detail-block">
-            <h4>Conceptualized Assistant Suite</h4>
-            <ul class="detail-list">
-              <li>Scoped specialized assistant frameworks including a <strong>CEO Advisor, Sales Coach, Marketing Strategist, Pitch Deck Reviewer,</strong> and <strong>SOP Writer</strong>.</li>
-              <li>Focuses on defining explicit input requirements and structured output templates prior to GPT or workflow deployment.</li>
+          <div class="info-col">
+            <h4>Production Stack</h4>
+            <ul class="feature-list">
+              <li><strong>Macro 3D &amp; Lighting Direction:</strong> Precision studio lighting, dial textures, and dramatic camera motion.</li>
+              <li><strong>Generative Video &amp; Audio:</strong> Powered by Veo, Runway, Pika Labs, Krea.ai, and ElevenLabs for bespoke commercial pacing.</li>
             </ul>
           </div>
         </div>
-        <div class="tags-row">
-          <div class="tech-tags">
-            <span class="tech-tag">Use-Case Architecture</span>
-            <span class="tech-tag">Knowledge Structuring</span>
-            <span class="tech-tag">SOP &amp; Playbook Design</span>
-            <span class="tech-tag">Assistant Prompt Engineering</span>
+
+        <div class="card-footer">
+          <div class="tags">
+            <span class="tag">3D Product Storytelling</span>
+            <span class="tag">Veo / Runway / Pika</span>
+            <span class="tag">Krea.ai</span>
+            <span class="tag">Luxury Watch Commercials</span>
           </div>
         </div>
       </article>
@@ -727,25 +689,13 @@
   </div>
 
   <footer>
-    <div class="container">
-      <p>&copy; 2026 Ojasvi Vyas &bull; AI Automation &amp; Intelligent Systems Portfolio</p>
-    </div>
+    <p>
+      &copy; 2026 Ojasvi Vyas &bull; 
+      <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer">LinkedIn</a> &bull; 
+      <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer">Opportunity Desk</a> &bull; 
+      <a href="mailto:ojasvishreeyavyas@gmail.com">ojasvishreeyavyas@gmail.com</a>
+    </p>
   </footer>
 
-  <script>
-    function filterProjects(category, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      
-      const cards = document.querySelectorAll('.project-card');
-      cards.forEach(card => {
-        if (category === 'all' || card.dataset.category.includes(category)) {
-          card.style.display = 'block';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-  </script>
 </body>
 </html>

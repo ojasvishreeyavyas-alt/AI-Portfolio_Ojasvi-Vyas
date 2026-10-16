@@ -33,7 +33,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Top Navigation (Thinkly AI Style) */
+    /* Navigation */
     nav {
       position: sticky;
       top: 0;
@@ -53,27 +53,23 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.65rem;
-      font-weight: 700;
-      font-size: 1.05rem;
+      gap: 0.75rem;
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 400;
       color: var(--text-dark);
       text-decoration: none;
-      letter-spacing: -0.02em;
     }
-    .brand-icon {
-      width: 28px;
-      height: 28px;
-      border-radius: 6px;
-      background: var(--btn-dark);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
+    .brand-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1px solid var(--border);
     }
     .nav-links {
       display: flex;
-      gap: 2.25rem;
+      gap: 2rem;
       align-items: center;
       font-size: 0.92rem;
       font-weight: 500;
@@ -83,9 +79,7 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:not(.btn-pill):hover {
-      color: var(--text-dark);
-    }
+    .nav-links a:not(.btn-pill):hover { color: var(--text-dark); }
     .btn-pill {
       background: var(--btn-dark);
       color: #ffffff;
@@ -99,21 +93,15 @@
       gap: 0.45rem;
       transition: all 0.2s ease;
     }
-    .btn-pill:hover {
-      background: #2b2f36;
-      transform: translateY(-1px);
-    }
+    .btn-pill:hover { background: #2b2f36; transform: translateY(-1px); }
 
-    /* Atmospheric Sunset & Slate-Sky Hero */
-    .hero-wrapper {
-      padding: 0 1.25rem;
-      margin-top: 1rem;
-    }
+    /* Hero Section */
+    .hero-wrapper { padding: 0 1.25rem; margin-top: 1rem; }
     .hero {
       max-width: 1240px;
       margin: 0 auto;
       border-radius: 18px;
-      padding: 6.5rem 2rem 5.5rem 2rem;
+      padding: 6rem 2rem 5rem 2rem;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -122,13 +110,6 @@
         linear-gradient(135deg, #b8aba1 0%, #8ea4b2 48%, #567586 100%);
       box-shadow: 0 20px 50px rgba(20, 22, 25, 0.08);
       color: #ffffff;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(20, 22, 25, 0.08), rgba(20, 22, 25, 0.28));
-      pointer-events: none;
     }
     .hero-content {
       position: relative;
@@ -148,21 +129,18 @@
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, 0.3);
       color: #fff;
-      margin-bottom: 1.75rem;
+      margin-bottom: 1.5rem;
     }
     .hero h1 {
       font-family: 'Instrument Serif', Georgia, serif;
       font-weight: 400;
-      font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
       line-height: 1.08;
       letter-spacing: -0.01em;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
       text-shadow: 0 2px 20px rgba(0, 0, 0, 0.12);
     }
-    .hero h1 em {
-      font-style: italic;
-      color: #fffdf9;
-    }
+    .hero h1 em { font-style: italic; color: #fffdf9; }
     .hero-sub {
       font-size: 1.12rem;
       font-weight: 400;
@@ -171,8 +149,6 @@
       margin: 0 auto 2.5rem auto;
       line-height: 1.65;
     }
-
-    /* Floating Action Bar (Thinkly Input Style) */
     .hero-bar {
       background: #ffffff;
       padding: 0.5rem 0.5rem 0.5rem 1.5rem;
@@ -184,16 +160,8 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    .hero-bar-text {
-      color: var(--text-body);
-      font-size: 0.92rem;
-      font-weight: 500;
-    }
-    .hero-bar-actions {
-      display: flex;
-      gap: 0.5rem;
-      flex-wrap: wrap;
-    }
+    .hero-bar-text { color: var(--text-body); font-size: 0.92rem; font-weight: 500; }
+    .hero-bar-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
     .btn-light {
       background: var(--bg-subtle);
       color: var(--text-dark);
@@ -204,49 +172,28 @@
       text-decoration: none;
       transition: background 0.2s;
     }
-    .btn-light:hover {
-      background: #e5dfd5;
-    }
+    .btn-light:hover { background: #e5dfd5; }
 
     /* Main Container */
-    .container {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 4.5rem 1.5rem 6rem 1.5rem;
-    }
-    .section-header {
-      text-align: center;
-      margin-bottom: 3.5rem;
-    }
+    .container { max-width: 1120px; margin: 0 auto; padding: 4.5rem 1.5rem 6rem 1.5rem; }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
     .section-header h2 {
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 2.75rem;
+      font-size: 3rem;
       font-weight: 400;
       color: var(--text-dark);
       margin-bottom: 0.5rem;
     }
-    .section-header p {
-      color: var(--text-body);
-      font-size: 1.02rem;
-    }
+    .section-header p { color: var(--text-body); font-size: 1.05rem; }
 
     /* Project Cards */
-    .projects-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 2.75rem;
-    }
+    .projects-stack { display: flex; flex-direction: column; gap: 3rem; }
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 18px;
       padding: 2.75rem;
       box-shadow: 0 8px 30px rgba(20, 22, 25, 0.03);
-      transition: border-color 0.25s, box-shadow 0.25s;
-    }
-    .project-card:hover {
-      border-color: var(--border-hover);
-      box-shadow: 0 14px 40px rgba(20, 22, 25, 0.06);
     }
     .card-header {
       display: flex;
@@ -254,7 +201,7 @@
       align-items: flex-start;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
     .proj-number {
       font-family: 'JetBrains Mono', monospace;
@@ -268,9 +215,9 @@
     }
     .proj-title {
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 2.25rem;
+      font-size: 2.5rem;
       font-weight: 400;
-      line-height: 1.15;
+      line-height: 1.1;
       color: var(--text-dark);
     }
     .status-pill {
@@ -284,90 +231,78 @@
       border: 1px solid var(--border);
     }
 
-    .proj-lead {
-      font-size: 1.1rem;
+    /* Single-line problem statement */
+    .problem-banner {
+      background: var(--bg-subtle);
+      border-left: 3px solid var(--slate-blue);
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.92rem;
       color: var(--text-body);
       margin-bottom: 1.75rem;
-      max-width: 860px;
     }
+    .problem-banner strong { color: var(--text-dark); }
 
-    .info-grid {
+    .proj-lead { font-size: 1.1rem; color: var(--text-body); margin-bottom: 1.75rem; }
+
+    /* Visual Graph / Metrics Bar */
+    .metrics-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 2rem;
-      background: var(--bg-page);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.75rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
       margin-bottom: 1.75rem;
     }
     @media (max-width: 768px) {
-      .info-grid { grid-template-columns: 1fr; }
-      .project-card { padding: 1.75rem; }
-      .nav-links a:not(.btn-pill) { display: none; }
+      .metrics-grid { grid-template-columns: 1fr; }
     }
-    .info-col h4 {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 0.65rem;
+    .metric-card {
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
     }
-    .info-col p {
-      font-size: 0.95rem;
-      color: var(--text-body);
+    .metric-value {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2rem;
+      color: var(--text-dark);
+      line-height: 1.1;
+      margin-bottom: 0.25rem;
     }
-    .feature-list {
-      list-style: none;
-    }
-    .feature-list li {
-      font-size: 0.95rem;
-      color: var(--text-body);
-      position: relative;
-      padding-left: 1.25rem;
-      margin-bottom: 0.5rem;
-    }
-    .feature-list li::before {
-      content: "✦";
-      position: absolute;
-      left: 0;
-      color: var(--warm-gold);
+    .metric-label {
       font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 500;
     }
 
-    /* Workflow Steps */
+    /* Workflow Visualizer */
     .workflow-bar {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      gap: 0.6rem;
-      padding: 1.1rem 1.25rem;
+      gap: 0.5rem;
+      padding: 1rem 1.25rem;
       background: var(--bg-subtle);
       border: 1px solid var(--border);
       border-radius: 10px;
       margin-bottom: 1.75rem;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
     }
     .wf-node {
       background: #ffffff;
       color: var(--text-dark);
-      padding: 0.4rem 0.8rem;
+      padding: 0.4rem 0.75rem;
       border-radius: 6px;
       border: 1px solid var(--border);
       font-weight: 500;
     }
-    .wf-arrow {
-      color: var(--warm-gold);
-      font-weight: bold;
-    }
+    .wf-arrow { color: var(--warm-gold); font-weight: bold; }
 
-    /* 3D Showcase Media Grid */
-    .media-showcase {
-      margin: 1.75rem 0;
-    }
+    /* Media Showcase */
+    .media-showcase { margin: 1.75rem 0; }
     .media-showcase-title {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       color: var(--text-muted);
@@ -379,9 +314,7 @@
       grid-template-columns: repeat(2, 1fr);
       gap: 1.25rem;
     }
-    @media (max-width: 680px) {
-      .media-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 680px) { .media-grid { grid-template-columns: 1fr; } }
     .media-item {
       background: #0d0f12;
       border-radius: 12px;
@@ -393,7 +326,7 @@
     .media-item video,
     .media-item img {
       width: 100%;
-      height: 290px;
+      height: 280px;
       object-fit: cover;
       display: block;
       background: #090a0f;
@@ -409,11 +342,11 @@
     }
     .media-caption span {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
+      font-size: 0.7rem;
       color: #eab308;
     }
 
-    /* Card Footer */
+    /* Footer & Tags */
     .card-footer {
       display: flex;
       justify-content: space-between;
@@ -423,11 +356,7 @@
       padding-top: 1.5rem;
       border-top: 1px solid var(--border);
     }
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
     .tag {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
@@ -444,11 +373,7 @@
       color: var(--text-muted);
       font-size: 0.9rem;
     }
-    footer a {
-      color: var(--text-dark);
-      font-weight: 600;
-      text-decoration: none;
-    }
+    footer a { color: var(--text-dark); font-weight: 600; text-decoration: none; }
   </style>
 </head>
 <body>
@@ -457,7 +382,7 @@
   <nav>
     <div class="nav-container">
       <a href="#" class="brand">
-        <span class="brand-icon">✦</span>
+        <img src="professional photo.jpeg" alt="Ojasvi Vyas" class="brand-avatar">
         Ojasvi Vyas
       </a>
       <div class="nav-links">
@@ -475,7 +400,7 @@
   <div class="hero-wrapper">
     <section class="hero">
       <div class="hero-content">
-        <span class="hero-eyebrow">Ojasvi Vyas &bull; AI Solutions &amp; Automation Strategist</span>
+        <span class="hero-eyebrow">AI Solutions &amp; Automation Strategist</span>
         <h1>Ideas remain original.<br><em>Let your mind do the creativity,</em> let AI do the repetitive tasks.</h1>
         <p class="hero-sub">
           Building high-leverage B2B opportunity networks, autonomous content research pipelines, and generative 3D commercial storytelling.
@@ -503,7 +428,7 @@
   <div class="container">
     <div class="section-header">
       <h2>Selected Works &amp; Systems</h2>
-      <p>Three focused pillars across B2B intelligence, workflow automation, and luxury generative production.</p>
+      <p>Three core pillars engineered to replace manual bottlenecks with intelligent automation.</p>
     </div>
 
     <div class="projects-stack">
@@ -518,22 +443,26 @@
           <span class="status-pill">Live Platform</span>
         </div>
 
+        <div class="problem-banner">
+          <strong>Problem:</strong> Manual prospecting takes months and lacks precision when sourcing global clients, distributors, and manufacturers.
+        </div>
+
         <p class="proj-lead">
-          Sits on a vast global intelligence network capable of finding virtually anyone from anywhere for a founder or business—whether high-intent clients, regional distributors, or specialized manufacturers.
+          Sits on a vast global intelligence network capable of finding virtually anyone from anywhere for a founder or business—be it high-intent clients, regional distributors, or specialized manufacturers.
         </p>
 
-        <div class="info-grid">
-          <div class="info-col">
-            <h4>The Core Advantage</h4>
-            <p>Founders lose months trying to manually source verified supply-chain partners, niche distributors, or enterprise buyers across geographies. The Opportunity Desk turns fragmented global data into ready-to-act commercial pipelines.</p>
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-value">Global</div>
+            <div class="metric-label">Network Sourcing Range</div>
           </div>
-          <div class="info-col">
-            <h4>What It Delivers</h4>
-            <ul class="feature-list">
-              <li><strong>Global Partner &amp; Buyer Discovery:</strong> Pinpoints exact-fit clients, distributors, and manufacturers across domestic and international markets.</li>
-              <li><strong>Qualification &amp; Context:</strong> Filters out noise using strict ICP gates, delivering verified decision-maker context and tailored outreach angles.</li>
-              <li><strong>Proven Traction:</strong> Built to cut prospecting time by ~50% while unlocking high-converting B2B conversations.</li>
-            </ul>
+          <div class="metric-card">
+            <div class="metric-value">~50%</div>
+            <div class="metric-label">Time Saved on Prospecting</div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-value">20+</div>
+            <div class="metric-label">Target Conversations / Month</div>
           </div>
         </div>
 
@@ -542,7 +471,6 @@
             <span class="tag">Global B2B Sourcing</span>
             <span class="tag">Client &amp; Distributor Discovery</span>
             <span class="tag">Manufacturer Networks</span>
-            <span class="tag">AI Opportunity Intelligence</span>
           </div>
           <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-pill">
             Visit Live Website &rarr;
@@ -560,41 +488,29 @@
           <span class="status-pill">Workflow Automation</span>
         </div>
 
+        <div class="problem-banner">
+          <strong>Problem:</strong> Content research, trend sorting, and drafting create massive manual friction across disparate tools.
+        </div>
+
         <p class="proj-lead">
-          End-to-end automated workflows that handle trend analysis, high-signal idea selection, structured drafting, and workspace organization—freeing human minds to focus purely on original creative direction.
+          End-to-end automated workflows that handle trend analysis, high-signal idea selection, structured drafting, and workspace organization.
         </p>
 
         <div class="workflow-bar">
-          <span class="wf-node">01. Trend Analysis &amp; Scraping</span>
+          <span class="wf-node">01. Trend Scraping</span>
           <span class="wf-arrow">&rarr;</span>
-          <span class="wf-node">02. AI Scoring &amp; Top-3 Idea Selection</span>
+          <span class="wf-node">02. AI Scoring (Top 3 Ideas)</span>
           <span class="wf-arrow">&rarr;</span>
-          <span class="wf-node">03. Structured Drafting</span>
+          <span class="wf-node">03. Automated Drafting</span>
           <span class="wf-arrow">&rarr;</span>
-          <span class="wf-node">04. Google Docs / Sheets Organization</span>
-        </div>
-
-        <div class="info-grid">
-          <div class="info-col">
-            <h4>The Bottleneck</h4>
-            <p>Creative teams spend 70% of their bandwidth on repetitive research, tracking trends across tabs, sorting spreadsheets, and formatting initial drafts before real creative work even begins.</p>
-          </div>
-          <div class="info-col">
-            <h4>Workflow Architecture</h4>
-            <ul class="feature-list">
-              <li><strong>Automated Trend Analysis:</strong> Scrapes and aggregates emerging topic signals into a centralized Google Sheets repository.</li>
-              <li><strong>Intelligent Idea Selection:</strong> Evaluates candidate topics against audience relevance and isolates the top three highest-potential ideas per sprint.</li>
-              <li><strong>Drafting &amp; Organization:</strong> Generates structured first drafts and automatically organizes files in Google Docs and Drive for human editorial polish.</li>
-            </ul>
-          </div>
+          <span class="wf-node">04. Google Docs Sync</span>
         </div>
 
         <div class="card-footer">
           <div class="tags">
             <span class="tag">Trend Analysis</span>
-            <span class="tag">Automated Idea Selection</span>
-            <span class="tag">AI Drafting Pipelines</span>
-            <span class="tag">Google Workspace Automation</span>
+            <span class="tag">Idea Selection</span>
+            <span class="tag">Drafting &amp; Organization</span>
           </div>
         </div>
       </article>
@@ -609,78 +525,65 @@
           <span class="status-pill">Creative &amp; Commercial</span>
         </div>
 
+        <div class="problem-banner">
+          <strong>Problem:</strong> Traditional luxury product shoots require prohibitive budgets and lengthy post-production cycles.
+        </div>
+
         <p class="proj-lead">
-          Combining generative visual tools, macro 3D product rendering, and cinematic art direction to craft high-impact commercial storytelling for luxury timepieces and premium brands.
+          Combining generative visual tools, macro 3D product rendering, and cinematic art direction to craft high-impact commercial storytelling for luxury timepieces.
         </p>
 
-        <!-- Embedded Media Showcase -->
+        <!-- Media Showcase -->
         <div class="media-showcase">
           <div class="media-showcase-title">Featured Luxury Timepiece Films &amp; Royal Visual Renders</div>
           <div class="media-grid">
-            <!-- Video 1: Invicta Skeleton Watch -->
+            <!-- Video 1 -->
             <div class="media-item">
-              <video controls playsinline preload="metadata">
+              <video autoplay muted loop playsinline preload="auto">
                 <source src="watch-film-1.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
               </video>
               <div class="media-caption">
-                <strong>Iridescent Skeleton Tourbillon (Invicta)</strong>
+                <strong>Iridescent Skeleton Tourbillon (Invicta)</strong>[cite: 7]
                 <span>3D + AI Motion Film</span>
               </div>
             </div>
 
-            <!-- Video 2: Precision In Every Second -->
+            <!-- Video 2 -->
             <div class="media-item">
-              <video controls playsinline preload="metadata">
+              <video autoplay muted loop playsinline preload="auto">
                 <source src="watch-film-2.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
               </video>
               <div class="media-caption">
-                <strong>"Precision in Every Second" Monolith</strong>
+                <strong>"Precision in Every Second" Monolith</strong>[cite: 8]
                 <span>Macro Commercial Spot</span>
               </div>
             </div>
 
-            <!-- Image 1: Royal Rose Gold Chronograph -->
+            <!-- Image 1 -->
             <div class="media-item">
-              <img src="watch-royal-1.png" alt="Rolersonie Rose Gold Chronograph Watch Render">
+              <img src="watch-royal-1.png" alt="Rolersonie Rose Gold Chronograph Watch Render"[cite: 9]>
               <div class="media-caption">
-                <strong>Rose-Gold &amp; Alligator Chronograph</strong>
+                <strong>Rose-Gold &amp; Alligator Chronograph</strong>[cite: 9]
                 <span>Studio Split-Light Render</span>
               </div>
             </div>
 
-            <!-- Image 2: Royal Velvet Pillow Timepiece -->
+            <!-- Image 2 -->
             <div class="media-item">
-              <img src="watch-royal-2.png" alt="Luxury Gold Watch on Burgundy Velvet Cushion">
+              <img src="watch-royal-2.png" alt="Luxury Gold Watch on Burgundy Velvet Cushion"[cite: 10]>
               <div class="media-caption">
-                <strong>Sapphire-Bezel Heritage Timepiece</strong>
+                <strong>Sapphire-Bezel Heritage Timepiece</strong>[cite: 10]
                 <span>Royal Editorial Concept</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="info-grid">
-          <div class="info-col">
-            <h4>Creative Direction</h4>
-            <p>Delivers agency-grade luxury visuals—from brushed metallic dial reflections and iridescent skeleton movements to regal velvet editorial staging—without the overhead of traditional physical studio shoots.</p>
-          </div>
-          <div class="info-col">
-            <h4>Production Stack</h4>
-            <ul class="feature-list">
-              <li><strong>Macro 3D &amp; Lighting Direction:</strong> Precision studio lighting, dial textures, and dramatic camera motion.</li>
-              <li><strong>Generative Video &amp; Audio:</strong> Powered by Veo, Runway, Pika Labs, Krea.ai, and ElevenLabs for bespoke commercial pacing.</li>
-            </ul>
-          </div>
-        </div>
-
         <div class="card-footer">
           <div class="tags">
-            <span class="tag">3D Product Storytelling</span>
-            <span class="tag">Veo / Runway / Pika</span>
-            <span class="tag">Krea.ai</span>
-            <span class="tag">Luxury Watch Commercials</span>
+            <span class="tag">Generative Tools</span>
+            <span class="tag">Premium Product Storytelling</span>
+            <span class="tag">Macro 3D Rendering</span>
           </div>
         </div>
       </article>

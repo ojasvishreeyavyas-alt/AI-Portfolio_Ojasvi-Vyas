@@ -7,20 +7,23 @@
   <meta name="description" content="Ideas remain original. Automate what's repetitive! AI Portfolio by Ojasvi Vyas.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-page: #faf8f5;
+      --bg-page: #fdfbf7;
       --bg-card: #ffffff;
-      --bg-subtle: #f3efe9;
-      --border: #e6e0d6;
-      --border-hover: #c8beaf;
-      --text-dark: #141619;
-      --text-body: #4a5058;
-      --text-muted: #787f87;
-      --slate-blue: #4c6c7c;
-      --warm-gold: #c9935b;
-      --btn-dark: #141619;
+      --bg-subtle: #f5f0e6;
+      --bg-dark: #121519;
+      --border: #e8e1d5;
+      --border-strong: #d5cbb8;
+      --text-dark: #18191b;
+      --text-teal: #234b5e;
+      --text-body: #525860;
+      --text-muted: #848a92;
+      --accent-gold: #c88a4b;
+      --accent-green: #16a34a;
+      --accent-green-bg: #dcfce7;
+      --accent-blue-bg: #e0f2fe;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -29,22 +32,24 @@
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg-page);
       color: var(--text-dark);
-      line-height: 1.65;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation */
+    /* Top Minimal Navbar */
     nav {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
+      right: 0;
       z-index: 100;
-      background: rgba(250, 248, 245, 0.9);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(20, 22, 25, 0.07);
-      padding: 0.95rem 2rem;
+      background: rgba(253, 251, 247, 0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(24, 25, 27, 0.06);
+      padding: 0.85rem 2rem;
     }
     .nav-container {
-      max-width: 1200px;
+      max-width: 1220px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -53,16 +58,15 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.65rem;
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.5rem;
-      font-weight: 400;
+      font-size: 1.55rem;
       color: var(--text-dark);
       text-decoration: none;
     }
-    .brand-avatar-sm {
-      width: 36px;
-      height: 36px;
+    .brand img {
+      width: 34px;
+      height: 34px;
       border-radius: 50%;
       object-fit: cover;
       border: 1px solid var(--border);
@@ -71,319 +75,471 @@
       display: flex;
       gap: 2rem;
       align-items: center;
-      font-size: 0.92rem;
+      font-size: 0.88rem;
       font-weight: 500;
     }
-    .nav-links a:not(.btn-pill) {
+    .nav-links a:not(.btn-nav) {
       color: var(--text-body);
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:not(.btn-pill):hover { color: var(--text-dark); }
-    .btn-pill {
-      background: var(--btn-dark);
-      color: #ffffff;
-      padding: 0.6rem 1.25rem;
-      border-radius: 8px;
+    .nav-links a:not(.btn-nav):hover { color: var(--text-dark); }
+    .btn-nav {
+      background: var(--text-dark);
+      color: #fff;
+      padding: 0.55rem 1.15rem;
+      border-radius: 99px;
       font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.84rem;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      transition: all 0.2s ease;
+      transition: transform 0.2s, background 0.2s;
     }
-    .btn-pill:hover { background: #2b2f36; transform: translateY(-1px); }
+    .btn-nav:hover { background: var(--text-teal); transform: translateY(-1px); }
 
-    /* Hero Section matching screenshot layout */
-    .hero-wrapper {
-      padding: 2rem 1.25rem 4rem 1.25rem;
-    }
+    /* HERO SECTION — Exact match to your screenshot */
     .hero {
-      max-width: 1240px;
-      margin: 0 auto;
-      border-radius: 24px;
-      padding: 5rem 2rem;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+      padding: 7.5rem 1.5rem 5rem 1.5rem;
       position: relative;
       overflow: hidden;
-      background: 
-        radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.9) 0%, rgba(243, 235, 224, 0.6) 50%, rgba(216, 224, 230, 0.4) 100%),
-        linear-gradient(180deg, #faf8f5 0%, #f4efe6 100%);
-      box-shadow: 0 10px 40px rgba(20, 22, 25, 0.04);
-      border: 1px solid var(--border);
+      background:
+        radial-gradient(circle at 88% 82%, rgba(206, 229, 242, 0.85) 0%, rgba(206, 229, 242, 0) 48%),
+        radial-gradient(circle at 50% 42%, rgba(251, 232, 206, 0.9) 0%, rgba(253, 251, 247, 0) 65%),
+        linear-gradient(180deg, #fbf9f4 0%, #faefe0 55%, #f5f7f9 100%);
+      border-bottom: 1px solid var(--border);
     }
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 880px;
+    .hero-inner {
+      max-width: 820px;
       margin: 0 auto;
       display: flex;
       flex-direction: column;
       align-items: center;
+      z-index: 2;
     }
-    
-    /* Centered Profile Avatar */
-    .hero-avatar-wrapper {
-      width: 170px;
-      height: 170px;
+    .hero-avatar-ring {
+      width: 196px;
+      height: 196px;
       border-radius: 50%;
-      padding: 4px;
+      padding: 6px;
       background: #ffffff;
-      box-shadow: 0 12px 30px rgba(20, 22, 25, 0.08);
-      border: 1px solid var(--border);
-      margin-bottom: 2rem;
+      box-shadow: 0 18px 45px rgba(24, 25, 27, 0.08);
+      margin-bottom: 2.2rem;
     }
-    .hero-avatar {
+    .hero-avatar-ring img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
       object-fit: cover;
+      display: block;
     }
-
-    .hero-eyebrow {
+    .hero-pill {
       display: inline-block;
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.72rem;
+      font-weight: 500;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      padding: 0.45rem 1.2rem;
+      letter-spacing: 0.22em;
+      padding: 0.48rem 1.35rem;
       border-radius: 99px;
       background: #ffffff;
-      border: 1px solid var(--border);
-      color: var(--text-dark);
+      border: 1px solid rgba(24, 25, 27, 0.08);
+      color: var(--text-body);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
       margin-bottom: 1.75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.02);
     }
-
     .hero h1 {
       font-family: 'Instrument Serif', Georgia, serif;
       font-weight: 400;
-      font-size: clamp(3.2rem, 7vw, 5.8rem);
-      line-height: 1.05;
-      letter-spacing: -0.01em;
-      margin-bottom: 1.25rem;
+      font-size: clamp(3.4rem, 7.5vw, 5.8rem);
+      line-height: 1.03;
+      letter-spacing: -0.015em;
       color: var(--text-dark);
+      margin-bottom: 1.75rem;
     }
-    .hero h1 em { 
-      font-style: italic; 
-      color: var(--slate-blue); 
+    .hero h1 .italic-teal {
+      font-style: italic;
+      color: var(--text-teal);
+      display: block;
     }
-    
-    .hero-sub {
-      font-size: 1.12rem;
-      font-weight: 400;
+    .hero-subtitle {
+      font-size: 1.08rem;
       color: var(--text-body);
-      max-width: 650px;
-      margin: 0 auto 2.5rem auto;
+      max-width: 580px;
       line-height: 1.65;
+      margin-bottom: 2.25rem;
+      font-weight: 400;
     }
-
-    .hero-actions {
+    .hero-cta-row {
       display: flex;
-      gap: 1rem;
-      justify-content: center;
+      gap: 0.85rem;
       flex-wrap: wrap;
+      justify-content: center;
     }
-    .btn-dark-pill {
-      background: var(--btn-dark);
+    .btn-primary {
+      background: var(--text-dark);
       color: #ffffff;
-      padding: 0.75rem 1.6rem;
-      border-radius: 10px;
+      padding: 0.8rem 1.6rem;
+      border-radius: 99px;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-decoration: none;
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
+      box-shadow: 0 10px 24px rgba(24, 25, 27, 0.12);
       transition: all 0.2s;
     }
-    .btn-dark-pill:hover { background: #2b2f36; transform: translateY(-1px); }
-
-    .btn-outline-pill {
+    .btn-primary:hover { background: var(--text-teal); transform: translateY(-2px); }
+    .btn-secondary {
       background: #ffffff;
       color: var(--text-dark);
-      border: 1px solid var(--border);
-      padding: 0.75rem 1.6rem;
-      border-radius: 10px;
+      border: 1px solid var(--border-strong);
+      padding: 0.8rem 1.6rem;
+      border-radius: 99px;
       font-weight: 600;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
       transition: all 0.2s;
     }
-    .btn-outline-pill:hover { border-color: var(--text-muted); background: var(--bg-subtle); }
+    .btn-secondary:hover { background: var(--bg-subtle); }
 
-    /* Main Container */
-    .container { max-width: 1120px; margin: 0 auto; padding: 2rem 1.5rem 6rem 1.5rem; }
-    .section-header { text-align: center; margin-bottom: 3.5rem; }
-    .section-header h2 {
+    /* MAIN CONTAINER */
+    .container {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 5rem 1.5rem 6rem 1.5rem;
+    }
+    .section-head {
+      text-align: center;
+      margin-bottom: 4rem;
+    }
+    .section-head span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-gold);
+      font-weight: 600;
+    }
+    .section-head h2 {
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 3rem;
+      font-size: clamp(2.4rem, 4.5vw, 3.5rem);
       font-weight: 400;
       color: var(--text-dark);
-      margin-bottom: 0.5rem;
+      margin-top: 0.35rem;
     }
-    .section-header p { color: var(--text-body); font-size: 1.05rem; }
 
-    /* Project Cards */
-    .projects-stack { display: flex; flex-direction: column; gap: 3rem; }
+    /* PROJECT SHOWCASE CARDS */
+    .projects-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
     .project-card {
       background: var(--bg-card);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 2.75rem;
-      box-shadow: 0 8px 30px rgba(20, 22, 25, 0.03);
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 16px 48px rgba(24, 25, 27, 0.04);
     }
-    .card-header {
+    @media (max-width: 768px) {
+      .project-card { padding: 1.75rem; }
+      .nav-links a:not(.btn-nav) { display: none; }
+    }
+
+    .proj-top {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
-    .proj-number {
+    .proj-index {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--slate-blue);
+      letter-spacing: 0.12em;
+      color: var(--text-teal);
       font-weight: 600;
+      margin-bottom: 0.3rem;
       display: block;
-      margin-bottom: 0.35rem;
     }
     .proj-title {
       font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 2.5rem;
+      font-size: clamp(2.1rem, 3.8vw, 2.85rem);
       font-weight: 400;
       line-height: 1.1;
       color: var(--text-dark);
     }
-    .status-pill {
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
-      font-weight: 500;
-      padding: 0.35rem 0.85rem;
+      font-weight: 600;
+      padding: 0.4rem 0.9rem;
       border-radius: 99px;
       background: var(--bg-subtle);
       color: var(--text-dark);
       border: 1px solid var(--border);
     }
-
-    .problem-banner {
-      background: var(--bg-subtle);
-      border-left: 3px solid var(--slate-blue);
-      padding: 0.75rem 1rem;
-      border-radius: 0 8px 8px 0;
-      font-size: 0.92rem;
-      color: var(--text-body);
-      margin-bottom: 1.75rem;
+    .live-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-green);
+      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.2);
     }
-    .problem-banner strong { color: var(--text-dark); }
 
-    .proj-lead { font-size: 1.1rem; color: var(--text-body); margin-bottom: 1.75rem; }
-
-    .metrics-grid {
+    /* One-line Problem & Solution Strip */
+    .one-liner-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
-      margin-bottom: 1.75rem;
+      margin-bottom: 2rem;
     }
     @media (max-width: 768px) {
-      .metrics-grid { grid-template-columns: 1fr; }
+      .one-liner-grid { grid-template-columns: 1fr; }
     }
-    .metric-card {
+    .liner-box {
+      padding: 0.9rem 1.15rem;
+      border-radius: 12px;
+      font-size: 0.92rem;
       background: var(--bg-page);
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 1.25rem;
-      text-align: center;
     }
-    .metric-value {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 2rem;
-      color: var(--text-dark);
-      line-height: 1.1;
-      margin-bottom: 0.25rem;
-    }
-    .metric-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    .workflow-bar {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      padding: 1rem 1.25rem;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      margin-bottom: 1.75rem;
+    .liner-box.problem { border-left: 3px solid #ef4444; }
+    .liner-box.solution { border-left: 3px solid var(--text-teal); }
+    .liner-box strong {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.78rem;
-    }
-    .wf-node {
-      background: #ffffff;
-      color: var(--text-dark);
-      padding: 0.4rem 0.75rem;
-      border-radius: 6px;
-      border: 1px solid var(--border);
-      font-weight: 500;
-    }
-    .wf-arrow { color: var(--warm-gold); font-weight: bold; }
-
-    .media-showcase { margin: 1.75rem 0; }
-    .media-showcase-title {
-      font-size: 0.78rem;
+      font-size: 0.72rem;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      font-weight: 600;
-    }
-    .media-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.25rem;
-    }
-    @media (max-width: 680px) { .media-grid { grid-template-columns: 1fr; } }
-    .media-item {
-      background: #0d0f12;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      display: flex;
-      flex-direction: column;
-    }
-    .media-item video,
-    .media-item img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
       display: block;
-      background: #090a0f;
+      margin-bottom: 0.2rem;
+      color: var(--text-muted);
     }
-    .media-caption {
-      padding: 0.75rem 1rem;
-      background: #141619;
-      color: #e2e8f0;
-      font-size: 0.82rem;
+
+    /* 4-KPI Metric Row */
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 860px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    .kpi-box {
+      background: linear-gradient(180deg, #ffffff 0%, #faf7f0 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+    }
+    .kpi-num {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-size: 2.35rem;
+      line-height: 1;
+      color: var(--text-teal);
+      margin-bottom: 0.35rem;
+    }
+    .kpi-title {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .kpi-sub {
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+
+    /* Visual Dashboard Split */
+    .visual-split {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 920px) {
+      .visual-split { grid-template-columns: 1fr; }
+    }
+    .ui-panel {
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.4rem;
+      overflow-x: auto;
+    }
+    .ui-panel-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
     }
-    .media-caption span {
+    .ui-panel-title {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.7rem;
-      color: #eab308;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-body);
+      font-weight: 600;
     }
 
+    /* Mock Intelligence Table */
+    .intel-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+    }
+    .intel-table th {
+      text-align: left;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 0.5rem 0.6rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .intel-table td {
+      padding: 0.7rem 0.6rem;
+      border-bottom: 1px solid rgba(232, 225, 213, 0.6);
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+    .pill-match {
+      background: var(--accent-green-bg);
+      color: var(--accent-green);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+    }
+    .pill-type {
+      background: var(--accent-blue-bg);
+      color: var(--text-teal);
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    /* Bar Chart Comparison */
+    .bar-group {
+      margin-bottom: 1.1rem;
+    }
+    .bar-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+    .bar-track {
+      width: 100%;
+      height: 10px;
+      background: #e7e0d3;
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 99px;
+      background: var(--text-teal);
+    }
+    .bar-fill.gold { background: var(--accent-gold); }
+    .bar-fill.muted { background: #9ca3af; }
+
+    /* Visual Pipeline Nodes (Project 02) */
+    .pipeline-visual {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 860px) {
+      .pipeline-visual { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .pipeline-visual { grid-template-columns: 1fr; }
+    }
+    .pipe-step {
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem;
+      position: relative;
+    }
+    .pipe-step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+    .pipe-step h4 {
+      font-size: 0.98rem;
+      margin-bottom: 0.35rem;
+      color: var(--text-dark);
+    }
+    .pipe-step p {
+      font-size: 0.8rem;
+      color: var(--text-body);
+    }
+
+    /* 3D Luxury Media Grid (Project 03) */
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.35rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 720px) {
+      .media-grid { grid-template-columns: 1fr; }
+    }
+    .media-card {
+      background: var(--bg-dark);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+    .media-card video,
+    .media-card img {
+      width: 100%;
+      height: 310px;
+      object-fit: cover;
+      display: block;
+      background: #090b0e;
+    }
+    .media-bar {
+      padding: 0.85rem 1.15rem;
+      background: #14171c;
+      color: #f8fafc;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+    }
+    .media-bar span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #facc15;
+      background: rgba(250, 204, 21, 0.12);
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+    }
+
+    /* Card Footer */
     .card-footer {
       display: flex;
       justify-content: space-between;
@@ -393,245 +549,205 @@
       padding-top: 1.5rem;
       border-top: 1px solid var(--border);
     }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    .tag {
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .tag-chip {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      padding: 0.3rem 0.7rem;
-      border-radius: 6px;
+      font-size: 0.74rem;
+      padding: 0.32rem 0.75rem;
+      border-radius: 8px;
       background: var(--bg-subtle);
       color: var(--text-body);
     }
 
     footer {
       text-align: center;
-      padding: 3.5rem 1.5rem;
+      padding: 4rem 1.5rem;
       border-top: 1px solid var(--border);
       color: var(--text-muted);
       font-size: 0.9rem;
     }
-    footer a { color: var(--text-dark); font-weight: 600; text-decoration: none; }
+    footer a {
+      color: var(--text-dark);
+      font-weight: 600;
+      text-decoration: none;
+    }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Top Navigation -->
   <nav>
     <div class="nav-container">
       <a href="#" class="brand">
-        <img src="professional photo.jpeg" alt="Ojasvi Vyas" class="brand-avatar-sm">
+        <img src="professional%20photo.jpeg" alt="Ojasvi Vyas">
         Ojasvi Vyas
       </a>
       <div class="nav-links">
-        <a href="#opportunity-desk">Opportunity Desk</a>
-        <a href="#content-pipeline">Content Pipeline</a>
-        <a href="#product-films">3D Product Films</a>
-        <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-pill">
-          LinkedIn Profile ✦
+        <a href="#opportunity-desk">01. Opportunity Desk</a>
+        <a href="#content-pipeline">02. Content Pipeline</a>
+        <a href="#product-films">03. 3D Product Films</a>
+        <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-nav">
+          LinkedIn ↗
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section matching your screenshot structure -->
-  <div class="hero-wrapper">
-    <section class="hero">
-      <div class="hero-content">
-        <div class="hero-avatar-wrapper">
-          <img src="professional photo.jpeg" alt="Ojasvi Vyas" class="hero-avatar">
-        </div>
-        <span class="hero-eyebrow">AI and Growth Strategist</span>
-        <h1>Ideas remain original.<br><em>Automate what's repetitive!</em></h1>
-        <p class="hero-sub">
-          Building B2B opportunity networks, autonomous content research pipelines, and generative 3D commercial storytelling.
-        </p>
-        <div class="hero-actions">
-          <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-dark-pill">
-            Launch Opportunity Desk ✦
-          </a>
-          <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-outline-pill">
-            Connect on LinkedIn
-          </a>
-        </div>
+  <!-- HERO SECTION (Exact Visual Match to Screenshot) -->
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-avatar-ring">
+        <img src="professional%20photo.jpeg" alt="Ojasvi Vyas">
       </div>
-    </section>
-  </div>
 
-  <!-- Selected Projects -->
-  <div class="container" id="projects">
-    <div class="section-header">
-      <h2>Selected Works &amp; Systems</h2>
-      <p>Three core pillars engineered to replace manual bottlenecks with intelligent automation.</p>
+      <span class="hero-pill">AI AND GROWTH STRATEGIST</span>
+
+      <h1>
+        Ideas remain original.
+        <span class="italic-teal">Automate what's repetitive!</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Building B2B opportunity networks, autonomous content research pipelines, and generative 3D commercial storytelling.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Launch Opportunity Desk ✦
+        </a>
+        <a href="#opportunity-desk" class="btn-secondary">
+          View System Metrics ↓
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- SELECTED SYSTEMS & METRICS -->
+  <main class="container">
+    <div class="section-head">
+      <span>SYSTEMS &amp; PERFORMANCE</span>
+      <h2>Selected AI Architectures</h2>
     </div>
 
-    <div class="projects-stack">
+    <div class="projects-wrapper">
 
-      <!-- 01. The Opportunity Desk -->
+      <!-- ========================================================
+           PROJECT 01: THE OPPORTUNITY DESK
+      ========================================================= -->
       <article id="opportunity-desk" class="project-card">
-        <div class="card-header">
+        <div class="proj-top">
           <div>
-            <span class="proj-number">01 // B2B OPPORTUNITY INTELLIGENCE</span>
+            <span class="proj-index">01 // GLOBAL B2B OPPORTUNITY INTELLIGENCE</span>
             <h3 class="proj-title">The Opportunity Desk</h3>
           </div>
-          <span class="status-pill">Live Platform</span>
+          <span class="live-badge"><span class="live-dot"></span> Live Commercial Platform</span>
         </div>
 
-        <div class="problem-banner">
-          <strong>Problem:</strong> Manual prospecting takes months and lacks precision when sourcing global clients, distributors, and manufacturers.
-        </div>
-
-        <p class="proj-lead">
-          Sits on a vast global intelligence network capable of finding virtually anyone from anywhere for a founder or business—be it high-intent clients, regional distributors, or specialized manufacturers.
-        </p>
-
-        <div class="metrics-grid">
-          <div class="metric-card">
-            <div class="metric-value">Global</div>
-            <div class="metric-label">Network Sourcing Range</div>
+        <div class="one-liner-grid">
+          <div class="liner-box problem">
+            <strong>The Bottleneck</strong>
+            Founders waste months manually hunting for verified clients, distributors, and manufacturers with inconsistent qualification.
           </div>
-          <div class="metric-card">
-            <div class="metric-value">~50%</div>
-            <div class="metric-label">Time Saved on Prospecting</div>
-          </div>
-          <div class="metric-card">
-            <div class="metric-value">20+</div>
-            <div class="metric-label">Target Conversations / Month</div>
+          <div class="liner-box solution">
+            <strong>The Intelligence Engine</strong>
+            Sits on a global B2B network to pinpoint exact-fit buyers, distributors, or manufacturers anywhere in the world.
           </div>
         </div>
 
-        <div class="card-footer">
-          <div class="tags">
-            <span class="tag">Global B2B Sourcing</span>
-            <span class="tag">Client &amp; Distributor Discovery</span>
-            <span class="tag">Manufacturer Networks</span>
+        <!-- 4 Visual KPI Cards -->
+        <div class="kpi-grid">
+          <div class="kpi-box">
+            <div class="kpi-num">20+</div>
+            <div class="kpi-title">Sales Conversations</div>
+            <div class="kpi-sub">Generated per month (client-reported)</div>
           </div>
-          <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-pill">
-            Visit Live Website &rarr;
-          </a>
-        </div>
-      </article>
-
-      <!-- 02. AI Content Research Pipeline -->
-      <article id="content-pipeline" class="project-card">
-        <div class="card-header">
-          <div>
-            <span class="proj-number">02 // AUTONOMOUS CONTENT SYSTEMS</span>
-            <h3 class="proj-title">AI Content Research Pipeline</h3>
+          <div class="kpi-box">
+            <div class="kpi-num">~50%</div>
+            <div class="kpi-title">Faster Outreach</div>
+            <div class="kpi-sub">Reduction in manual prospecting hours</div>
           </div>
-          <span class="status-pill">Workflow Automation</span>
-        </div>
-
-        <div class="problem-banner">
-          <strong>Problem:</strong> Content research, trend sorting, and drafting create massive manual friction across disparate tools.
-        </div>
-
-        <p class="proj-lead">
-          End-to-end automated workflows that handle trend analysis, high-signal idea selection, structured drafting, and workspace organization.
-        </p>
-
-        <div class="workflow-bar">
-          <span class="wf-node">01. Trend Scraping</span>
-          <span class="wf-arrow">&rarr;</span>
-          <span class="wf-node">02. AI Scoring (Top 3 Ideas)</span>
-          <span class="wf-arrow">&rarr;</span>
-          <span class="wf-node">03. Automated Drafting</span>
-          <span class="wf-arrow">&rarr;</span>
-          <span class="wf-node">04. Google Docs Sync</span>
-        </div>
-
-        <div class="card-footer">
-          <div class="tags">
-            <span class="tag">Trend Analysis</span>
-            <span class="tag">Idea Selection</span>
-            <span class="tag">Drafting &amp; Organization</span>
+          <div class="kpi-box">
+            <div class="kpi-num">₹15k–20k</div>
+            <div class="kpi-title">Cost Saved</div>
+            <div class="kpi-sub">Estimated research savings per sprint</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num">Global</div>
+            <div class="kpi-title">Sourcing Coverage</div>
+            <div class="kpi-sub">Clients, Distributors &amp; Manufacturers</div>
           </div>
         </div>
-      </article>
 
-      <!-- 03. AI-Assisted 3D Product Films -->
-      <article id="product-films" class="project-card">
-        <div class="card-header">
-          <div>
-            <span class="proj-number">03 // GENERATIVE LUXURY PRODUCTION</span>
-            <h3 class="proj-title">AI-Assisted 3D Product Films</h3>
-          </div>
-          <span class="status-pill">Creative &amp; Commercial</span>
-        </div>
-
-        <div class="problem-banner">
-          <strong>Problem:</strong> Traditional luxury product shoots require prohibitive budgets and lengthy post-production cycles.
-        </div>
-
-        <p class="proj-lead">
-          Combining generative visual tools, macro 3D product rendering, and cinematic art direction to craft high-impact commercial storytelling for luxury timepieces.
-        </p>
-
-        <!-- Media Showcase -->
-        <div class="media-showcase">
-          <div class="media-showcase-title">Featured Luxury Timepiece Films &amp; Royal Visual Renders</div>
-          <div class="media-grid">
-            <!-- Video 1 -->
-            <div class="media-item">
-              <video autoplay muted loop playsinline preload="auto">
-                <source src="Watch video1.mp4" type="video/mp4">
-              </video>
-              <div class="media-caption">
-                <strong>Iridescent Skeleton Tourbillon (Invicta)</strong>[cite: 7]
-                <span>3D + AI Motion Film</span>
-              </div>
+        <!-- Visual Intelligence Table + Efficiency Graph -->
+        <div class="visual-split">
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <span class="ui-panel-title">Sample Opportunity Pipeline Deliverable</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent-green);">● ICP Gate Active</span>
             </div>
-
-            <!-- Video 2 -->
-            <div class="media-item">
-              <video autoplay muted loop playsinline preload="auto">
-                <source src="Watch_Video_Storyline_Generation.mp4" type="video/mp4">
-              </video>
-              <div class="media-caption">
-                <strong>"Precision in Every Second" Monolith</strong>[cite: 8]
-                <span>Macro Commercial Spot</span>
-              </div>
-            </div>
-
-            <!-- Image 1 -->
-            <div class="media-item">
-              <img src="watches_are_not_giving_royal_feel_royal_feels_not_coming_royal_needed_better_cczblohlc6s5qzly4jog_1.png" alt="Rolersonie Rose Gold Chronograph Watch Render">[cite: 9]
-              <div class="media-caption">
-                <strong>Rose-Gold &amp; Alligator Chronograph</strong>[cite: 9]
-                <span>Studio Split-Light Render</span>
-              </div>
-            </div>
-
-            <!-- Image 2 -->
-            <div class="media-item">
-              <img src="watches_are_not_giving_royal_feel_royal_feels_not_coming_royal_needed_better_xmligk7ta7eypdjfntn2_0.png" alt="Luxury Gold Watch on Burgundy Velvet Cushion">[cite: 10]
-              <div class="media-caption">
-                <strong>Sapphire-Bezel Heritage Timepiece</strong>[cite: 10]
-                <span>Royal Editorial Concept</span>
-              </div>
-            </div>
+            <table class="intel-table">
+              <thead>
+                <tr>
+                  <th>Target Entity</th>
+                  <th>Channel Type</th>
+                  <th>Region</th>
+                  <th>ICP Fit</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Aethelgard Industrial</td>
+                  <td><span class="pill-type">Manufacturer</span></td>
+                  <td>DACH / Europe</td>
+                  <td><span class="pill-match">96% Match</span></td>
+                  <td>Direct VP Intro</td>
+                </tr>
+                <tr>
+                  <td>Pacific Crest Supply</td>
+                  <td><span class="pill-type">Distributor</span></td>
+                  <td>US West Coast</td>
+                  <td><span class="pill-match">94% Match</span></td>
+                  <td>Channel Pitch</td>
+                </tr>
+                <tr>
+                  <td>Meridian B2B Group</td>
+                  <td><span class="pill-type">Enterprise Buyer</span></td>
+                  <td>APAC / India</td>
+                  <td><span class="pill-match">91% Match</span></td>
+                  <td>Custom Deck</td>
+                </tr>
+                <tr>
+                  <td>Vanguard Holdings</td>
+                  <td><span class="pill-type">Strategic Partner</span></td>
+                  <td>North America</td>
+                  <td><span class="pill-match">89% Match</span></td>
+                  <td>Warm Outreach</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
 
-        <div class="card-footer">
-          <div class="tags">
-            <span class="tag">Generative Tools</span>
-            <span class="tag">Premium Product Storytelling</span>
-            <span class="tag">Macro 3D Rendering</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </div>
-
-  <footer>
-    <p>
-      &copy; 2026 Ojasvi Vyas &bull; 
-      <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer">LinkedIn</a> &bull; 
-      <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer">Opportunity Desk</a> &bull; 
-      <a href="mailto:ojasvishreeyavyas@gmail.com">ojasvishreeyavyas@gmail.com</a>
-    </p>
-  </footer>
-
-</body>
-</html>
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <span class="ui-panel-title">Prospecting Impact Benchmark</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label-row">
+                <span>Opportunity Desk (AI + Verified)</span>
+                <span style="color:var(--text-teal);">14 hrs / 100 leads</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 48%;"></div></div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label-row">
+                <span>Manual Founder Prospecting</span>
+                <span style="color:var(--text-muted);">30+ hrs / 100 leads</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill muted" style="width: 95%;"></div></div>
+            </div>
+            <div class="bar-group

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ojasvi Vyas | AI Solutions & Automation Strategist</title>
+  <meta name="description" content="A portfolio of AI-powered business research, custom GPTs, workflow automation, content systems, and generative AI experiments by Ojasvi Vyas.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #07090e;
+      --surface: #0f131d;
+      --surface-hover: #161c2a;
+      --border: #1e2638;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.12);
+      --emerald: #34d399;
+      --emerald-bg: rgba(52, 211, 153, 0.1);
+      --amber: #fbbf24;
+      --amber-bg: rgba(251, 191, 36, 0.1);
+      --purple: #c084fc;
+      --purple-bg: rgba(192, 132, 252, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 9, 14, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.5rem;
+    }
+    .nav-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Layout */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 5rem 0 3.5rem 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .eyebrow {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      background: var(--accent-glow);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      padding: 0.35rem 0.75rem;
+      border-radius: 99px;
+      display: inline-block;
+      margin-bottom: 1.25rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.25rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+    .hero-sub {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin-bottom: 2rem;
+    }
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.4rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 0.92rem;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #060911;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-outline {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--text-muted); }
+
+    /* Filter Bar */
+    .filter-section {
+      padding: 2.5rem 0 1.5rem 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      background: var(--surface);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--accent-glow);
+      color: var(--accent);
+      border-color: rgba(56, 189, 248, 0.4);
+    }
+
+    /* Project Cards */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding-bottom: 4rem;
+    }
+    .project-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.25rem;
+      transition: border-color 0.25s, transform 0.25s;
+    }
+    .project-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .proj-num {
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .proj-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .badge-status {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 0.3rem 0.7rem;
+      border-radius: 6px;
+      white-space: nowrap;
+    }
+    .status-live {
+      background: var(--emerald-bg);
+      color: var(--emerald);
+      border: 1px solid rgba(52, 211, 153, 0.25);
+    }
+    .status-workflow {
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+    }
+    .status-concept {
+      background: var(--purple-bg);
+      color: var(--purple);
+      border: 1px solid rgba(192, 132, 252, 0.25);
+    }
+    .status-creative {
+      background: var(--amber-bg);
+      color: var(--amber);
+      border: 1px solid rgba(251, 191, 36, 0.25);
+    }
+
+    .proj-summary {
+      color: var(--text);
+      font-size: 1.02rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Two-column details inside card */
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 1.75rem;
+      background: rgba(7, 9, 14, 0.5);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @media (max-width: 768px) {
+      .details-grid { grid-template-columns: 1fr; }
+    }
+    .detail-block h4 {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+    .detail-block p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .detail-list {
+      list-style: none;
+    }
+    .detail-list li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: 0.45rem;
+    }
+    .detail-list li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.85rem;
+    }
+    .detail-list strong { color: var(--text); }
+
+    /* Pipeline Diagram */
+    .pipeline-flow {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 1.25rem 0;
+      padding: 1rem;
+      background: #0a0d14;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+    }
+    .flow-step {
+      background: var(--surface-hover);
+      color: var(--text);
+      padding: 0.35rem 0.65rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .flow-arrow { color: var(--accent); }
+
+    /* Outcome & Credibility Footer */
+    .outcome-bar {
+      background: rgba(56, 189, 248, 0.04);
+      border-left: 3px solid var(--accent);
+      padding: 0.85rem 1.1rem;
+      border-radius: 0 8px 8px 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+    .outcome-bar strong { color: var(--text); }
+
+    .tags-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border);
+    }
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .tech-tag {
+      font-size: 0.76rem;
+      font-family: 'JetBrains Mono', monospace;
+      background: #161d2b;
+      color: #cbd5e1;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="#" class="brand">OJASVI VYAS<span>.AI</span></a>
+      <div class="nav-links">
+        <a href="#projects">Projects (08)</a>
+        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank">LinkedIn</a>
+        <a href="mailto:your-email@example.com">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <span class="eyebrow">AI Solutions &amp; Automation Strategist</span>
+      <h1>AI Automation &amp; Intelligent Systems</h1>
+      <p class="hero-sub">
+        I design practical AI-assisted systems that help businesses discover opportunities, structure research, automate repetitive workflows, and turn information into actionable decisions.
+      </p>
+      <div class="cta-group">
+        <a href="#projects" class="btn btn-primary">Explore Selected Projects</a>
+        <a href="https://linkedin.com/in/YOUR-LINKEDIN" target="_blank" class="btn btn-outline">Connect on LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- Filter Navigation -->
+    <section id="projects" class="filter-section">
+      <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterProjects('all', this)">All Projects (8)</button>
+        <button class="filter-btn" onclick="filterProjects('b2b', this)">B2B Intelligence &amp; Agents</button>
+        <button class="filter-btn" onclick="filterProjects('automation', this)">Workflows &amp; Content</button>
+        <button class="filter-btn" onclick="filterProjects('creative', this)">Creative &amp; Product Concepts</button>
+      </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <div class="projects-grid">
+
+      <!-- 01. Opportunity Desk -->
+      <article class="project-card" data-category="b2b">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 01 // CORE PRODUCT &amp; GTM SERVICE</span>
+            <h2 class="proj-title">Opportunity Desk</h2>
+          </div>
+          <span class="badge-status status-live">Core Product / Service Built</span>
+        </div>
+        <p class="proj-summary">
+          An AI-powered B2B opportunity intelligence platform and go-to-market support service designed to help founder-led businesses identify relevant buyers, strategic partners, communities, and revenue channels.
+        </p>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Business Problem</h4>
+            <p>Founders and small teams spend substantial time searching for prospects and partners, often facing inconsistent qualification criteria and limited context for effective outreach.</p>
+          </div>
+          <div class="detail-block">
+            <h4>System Capabilities &amp; Approach</h4>
+            <ul class="detail-list">
+              <li>Structures custom opportunity pipelines around a specific target market, ICP, or revenue objective.</li>
+              <li>Identifies direct buyers, strategic partners, and relevant industry communities.</li>
+              <li>Combines AI-assisted company synthesis with human quality control for contact discovery and outreach rationale.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="outcome-bar">
+          <strong>Client-Reported Outcomes &amp; Deliverable Impact:</strong> Referenced project outcomes include 20+ sales conversations generated in a month, ~50% reduction in prospecting time, and estimated research savings of ₹15,000–₹20,000.
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">AI Research Synthesis</span>
+            <span class="tech-tag">ICP &amp; Persona Design</span>
+            <span class="tech-tag">B2B Prospect Discovery</span>
+            <span class="tech-tag">Opportunity Pipeline Design</span>
+            <span class="tech-tag">GTM Strategy</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02. AI Lead Research & Qualification Automation -->
+      <article class="project-card" data-category="b2b automation">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 02 // PROSPECT SOURCING &amp; QUALIFICATION</span>
+            <h2 class="proj-title">AI Lead Research &amp; Qualification Automation</h2>
+          </div>
+          <span class="badge-status status-workflow">Workflow Architecture</span>
+        </div>
+        <p class="proj-summary">
+          A repeatable prospecting workflow concept designed to collect raw business records, enrich company data, apply LLM-based qualification rules, and output prioritized lead sheets with human review checkpoints.
+        </p>
+        <div class="pipeline-flow">
+          <span class="flow-step">Discovery Sources / Apify</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Structured Sheet / DB</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">LLM ICP Qualification Gate</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Human Verification</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Prioritized Outreach List</span>
+        </div>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Business Problem</h4>
+            <p>Manual lead sourcing is slow and prone to inconsistent filtering. Sales teams need a structured method to check company fit against explicit inclusion and exclusion criteria.</p>
+          </div>
+          <div class="detail-block">
+            <h4>What the Workflow Does</h4>
+            <ul class="detail-list">
+              <li>Collects candidate business records from search and directory discovery sources.</li>
+              <li>Evaluates fit using an AI model guided by strict ICP rules and rejection gates.</li>
+              <li>Outputs fit rationale, source evidence, and follow-up priority while retaining human review for final contact verification.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">Apify (Data Collection)</span>
+            <span class="tech-tag">LLM Qualification Prompts</span>
+            <span class="tech-tag">n8n (Orchestration Design)</span>
+            <span class="tech-tag">Google Sheets / Airtable</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 03. Custom GPTs & Specialized Buyer-Finding Agents -->
+      <article class="project-card" data-category="b2b">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 03 // SPECIALIZED RESEARCH ASSISTANTS</span>
+            <h2 class="proj-title">Custom GPTs &amp; Specialized Buyer-Finding Agents</h2>
+          </div>
+          <span class="badge-status status-live">6 Specialized Assistants Built</span>
+        </div>
+        <p class="proj-summary">
+          A suite of purpose-built research GPTs engineered with domain-specific instructions, geographic boundaries, hard qualification gates, and structured output templates.
+        </p>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Business Problem</h4>
+            <p>Generic LLM prompts frequently return loosely relevant companies, unverified assumptions, or incomplete prospect lists. Dedicated agents enforce strict inclusion/rejection rules.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Agents Developed</h4>
+            <ul class="detail-list">
+              <li><strong>Silver Tsunami Buyer Finder:</strong> Researches US acquisition buyers (brokers, PE firms, operator buyers) segmented by buyer type and size.</li>
+              <li><strong>LA Off-Market Buyer Finder:</strong> Targets Greater Los Angeles manufacturing and distribution businesses using strict geographic and industry filters.</li>
+              <li><strong>Vinacamon Buyer Finder:</strong> Identifies US and European buyers for a Vietnam-based enterprise under strict contact-quality gates.</li>
+              <li><strong>Core GTM Suite:</strong> ICP Builder GPT, Email Leads Finder GPT, and Deep ICP &amp; Buyer Intelligence GPT.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="outcome-bar">
+          <strong>Key Deliverable Evidence:</strong> Produced a comprehensive Silver Tsunami research artifact detailing 20 qualified US acquisition buyers complete with websites, criteria fit, relevance scores, and custom outreach angles.
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">Custom GPT Architecture</span>
+            <span class="tech-tag">Hard Qualification Gates</span>
+            <span class="tech-tag">Geographic &amp; Sector Filtering</span>
+            <span class="tech-tag">Public-Source Verification</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 04. AI Content Research & Generation Pipeline -->
+      <article class="project-card" data-category="automation">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 04 // CONTENT SYSTEMS ARCHITECTURE</span>
+            <h2 class="proj-title">AI Content Research &amp; Generation Pipeline</h2>
+          </div>
+          <span class="badge-status status-workflow">Workflow Architecture</span>
+        </div>
+        <p class="proj-summary">
+          An end-to-end content workflow architecture designed to connect trend collection, AI-assisted topic scoring, draft generation, and automated document organization with human editorial oversight.
+        </p>
+        <div class="pipeline-flow">
+          <span class="flow-step">Idea Scraper</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Google Sheets Repo</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">AI Trend Analyzer (Top 3)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">AI Draft Generator</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">Google Docs / Drive + Editorial Review</span>
+        </div>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Business Problem</h4>
+            <p>Content production often suffers from fragmented handoffs across trend research, topic selection, initial drafting, and asset management.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Pipeline Mechanics</h4>
+            <ul class="detail-list">
+              <li>Scrapes and centralizes candidate topics into Google Sheets.</li>
+              <li>Applies an AI trend analyzer to score and select the top 3 ideas for the upcoming content sprint.</li>
+              <li>Generates structured first drafts saved automatically to Google Docs/Drive while keeping human editorial review in the loop before publishing.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">Trend Analysis</span>
+            <span class="tech-tag">Generative AI Drafting</span>
+            <span class="tech-tag">Google Sheets &amp; Docs</span>
+            <span class="tech-tag">Editorial Workflow Design</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 05. Understanding Gita -->
+      <article class="project-card" data-category="automation creative">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 05 // EDUCATIONAL CONTENT VENTURE</span>
+            <h2 class="proj-title">Understanding Gita — Modern Workplace Guidance</h2>
+          </div>
+          <span class="badge-status status-live">Content Channel / Venture</span>
+        </div>
+        <p class="proj-summary">
+          An educational content channel and course concept translating classical Bhagavad Gita philosophy into concise, actionable frameworks for corporate professionals.
+        </p>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>The Challenge</h4>
+            <p>Traditional philosophical texts often feel disconnected from high-pressure corporate decision-making and modern workplace challenges.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Strategy &amp; AI Integration</h4>
+            <ul class="detail-list">
+              <li>Develops relatable workplace themes and translates complex Sanskrit philosophy into short-form video scripts.</li>
+              <li>Uses AI selectively for topic ideation, initial script structuring, and cross-format content repurposing.</li>
+              <li>Structured for both short-form social distribution and modular educational courses.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="outcome-bar">
+          <strong>Early Channel Traction:</strong> Generated 11,000+ views across 22 short-form videos within an initial two-week publishing sprint.
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">Content Strategy</span>
+            <span class="tech-tag">AI-Assisted Ideation &amp; Scripting</span>
+            <span class="tech-tag">Short-Form Video</span>
+            <span class="tech-tag">Course Packaging</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 06. AI-Assisted 3D Product Films -->
+      <article class="project-card" data-category="creative">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 06 // GENERATIVE VISUAL PRODUCTION</span>
+            <h2 class="proj-title">AI-Assisted 3D Product Films</h2>
+          </div>
+          <span class="badge-status status-creative">Creative Commercial Workflow</span>
+        </div>
+        <p class="proj-summary">
+          A hybrid production workflow for luxury watches and premium goods that combines 3D product rendering, visual direction, and generative AI video and voice tools.
+        </p>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Business Problem</h4>
+            <p>Luxury and D2C brands require high-end cinematic product storytelling, which traditionally demands expensive physical shoots and lengthy post-production timelines.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Production Approach</h4>
+            <ul class="detail-list">
+              <li>Translates brand briefs into macro storyboards and cinematic camera sequences.</li>
+              <li>Integrates generative visual/motion tools (Runway, Pika Labs, Krea.ai) and AI voice synthesis (ElevenLabs, PlayHT) alongside custom 3D rendering and manual post-production.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">3D Product Rendering</span>
+            <span class="tech-tag">Runway</span>
+            <span class="tech-tag">Pika Labs</span>
+            <span class="tech-tag">Krea.ai</span>
+            <span class="tech-tag">ElevenLabs / PlayHT</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 07. Bhagavad Gita Guidance App -->
+      <article class="project-card" data-category="creative">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 07 // GUIDED-RESPONSE PRODUCT CONCEPT</span>
+            <h2 class="proj-title">Bhagavad Gita Guidance App (Listener → Resolver → Track)</h2>
+          </div>
+          <span class="badge-status status-concept">Early-Stage MVP Concept</span>
+        </div>
+        <p class="proj-summary">
+          A structured three-stage product concept designed to let users input a real-world personal or professional dilemma and receive mapped, actionable reflection steps.
+        </p>
+        <div class="pipeline-flow">
+          <span class="flow-step">01. Listener (Capture User Dilemma)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">02. Resolver (Map to Gita Framework)</span>
+          <span class="flow-arrow">→</span>
+          <span class="flow-step">03. Track (Structured Action Path)</span>
+        </div>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>User Need</h4>
+            <p>Users seeking philosophical clarity want immediate, situation-specific reflection and action steps rather than browsing unindexed chapters.</p>
+          </div>
+          <div class="detail-block">
+            <h4>MVP Architecture</h4>
+            <ul class="detail-list">
+              <li>Designed around a deterministic, manually mapped response architecture in Adalo for the initial MVP to guarantee philosophical accuracy.</li>
+              <li>Scoped for future AI-assisted intent classification once core response pathways are validated.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">Adalo (MVP Planning)</span>
+            <span class="tech-tag">Conversation-Flow Design</span>
+            <span class="tech-tag">Response Mapping</span>
+            <span class="tech-tag">Product Architecture</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 08. Founder Support Knowledge Tools -->
+      <article class="project-card" data-category="b2b creative">
+        <div class="card-top">
+          <div>
+            <span class="proj-num">PROJECT 08 // SPECIALIZED FOUNDER ASSISTANTS</span>
+            <h2 class="proj-title">Founder Support Knowledge Tools</h2>
+          </div>
+          <span class="badge-status status-concept">Exploratory Concept Suite</span>
+        </div>
+        <p class="proj-summary">
+          An exploratory library of structured operating playbooks and role-specific AI assistant concepts built to support recurring founder bottlenecks.
+        </p>
+        <div class="details-grid">
+          <div class="detail-block">
+            <h4>Business Problem</h4>
+            <p>Early-stage founders regularly handle sales coaching, marketing strategy, pitch deck reviews, and SOP creation without dedicated department heads.</p>
+          </div>
+          <div class="detail-block">
+            <h4>Conceptualized Assistant Suite</h4>
+            <ul class="detail-list">
+              <li>Scoped specialized assistant frameworks including a <strong>CEO Advisor, Sales Coach, Marketing Strategist, Pitch Deck Reviewer,</strong> and <strong>SOP Writer</strong>.</li>
+              <li>Focuses on defining explicit input requirements and structured output templates prior to GPT or workflow deployment.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tags-row">
+          <div class="tech-tags">
+            <span class="tech-tag">Use-Case Architecture</span>
+            <span class="tech-tag">Knowledge Structuring</span>
+            <span class="tech-tag">SOP &amp; Playbook Design</span>
+            <span class="tech-tag">Assistant Prompt Engineering</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Ojasvi Vyas &bull; AI Automation &amp; Intelligent Systems Portfolio</p>
+    </div>
+  </footer>
+
+  <script>
+    function filterProjects(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.category.includes(category)) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+  </script>
+</body>
+</html>

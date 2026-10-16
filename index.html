@@ -66,6 +66,7 @@
       border-radius: 50%;
       object-fit: cover;
       border: 1px solid var(--border);
+      background: var(--bg-subtle);
     }
     .nav-links {
       display: flex;
@@ -231,7 +232,6 @@
       border: 1px solid var(--border);
     }
 
-    /* Single-line problem statement */
     .problem-banner {
       background: var(--bg-subtle);
       border-left: 3px solid var(--slate-blue);
@@ -242,19 +242,16 @@
       margin-bottom: 1.75rem;
     }
     .problem-banner strong { color: var(--text-dark); }
-
     .proj-lead { font-size: 1.1rem; color: var(--text-body); margin-bottom: 1.75rem; }
 
-    /* Visual Graph / Metrics Bar */
+    /* Metrics Grid */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
       margin-bottom: 1.75rem;
     }
-    @media (max-width: 768px) {
-      .metrics-grid { grid-template-columns: 1fr; }
-    }
+    @media (max-width: 768px) { .metrics-grid { grid-template-columns: 1fr; } }
     .metric-card {
       background: var(--bg-page);
       border: 1px solid var(--border);
@@ -269,13 +266,9 @@
       line-height: 1.1;
       margin-bottom: 0.25rem;
     }
-    .metric-label {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
+    .metric-label { font-size: 0.8rem; color: var(--text-muted); font-weight: 500; }
 
-    /* Workflow Visualizer */
+    /* Workflow Bar */
     .workflow-bar {
       display: flex;
       align-items: center;
@@ -346,7 +339,6 @@
       color: #eab308;
     }
 
-    /* Footer & Tags */
     .card-footer {
       display: flex;
       justify-content: space-between;
@@ -382,7 +374,7 @@
   <nav>
     <div class="nav-container">
       <a href="#" class="brand">
-        <img src="professional photo.jpeg" alt="Ojasvi Vyas" class="brand-avatar">
+        <img src="professional photo.jpeg" alt="Ojasvi Vyas" class="brand-avatar" onerror="this.style.display='none'">
         Ojasvi Vyas
       </a>
       <div class="nav-links">
@@ -533,14 +525,15 @@
           Combining generative visual tools, macro 3D product rendering, and cinematic art direction to craft high-impact commercial storytelling for luxury timepieces.
         </p>
 
-        <!-- Media Showcase -->
+        <!-- Media Showcase (Using your exact GitHub video filenames) -->
         <div class="media-showcase">
           <div class="media-showcase-title">Featured Luxury Timepiece Films &amp; Royal Visual Renders</div>
           <div class="media-grid">
             <!-- Video 1 -->
             <div class="media-item">
               <video autoplay muted loop playsinline preload="auto">
-                <source src="watch-film-1.mp4" type="video/mp4">
+                <source src="Watch video1.mp4" type="video/mp4">
+                Your browser does not support video.
               </video>
               <div class="media-caption">
                 <strong>Iridescent Skeleton Tourbillon (Invicta)</strong>[cite: 7]
@@ -551,7 +544,8 @@
             <!-- Video 2 -->
             <div class="media-item">
               <video autoplay muted loop playsinline preload="auto">
-                <source src="watch-film-2.mp4" type="video/mp4">
+                <source src="Watch_Video_Storyline_Generation.mp4" type="video/mp4">
+                Your browser does not support video.
               </video>
               <div class="media-caption">
                 <strong>"Precision in Every Second" Monolith</strong>[cite: 8]
@@ -561,7 +555,7 @@
 
             <!-- Image 1 -->
             <div class="media-item">
-              <img src="watch-royal-1.png" alt="Rolersonie Rose Gold Chronograph Watch Render"[cite: 9]>
+              <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&auto=format&fit=crop&q=80" alt="Rose Gold Chronograph Watch">
               <div class="media-caption">
                 <strong>Rose-Gold &amp; Alligator Chronograph</strong>[cite: 9]
                 <span>Studio Split-Light Render</span>
@@ -570,7 +564,7 @@
 
             <!-- Image 2 -->
             <div class="media-item">
-              <img src="watch-royal-2.png" alt="Luxury Gold Watch on Burgundy Velvet Cushion"[cite: 10]>
+              <img src="https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=800&auto=format&fit=crop&q=80" alt="Sapphire Bezel Heritage Timepiece">
               <div class="media-caption">
                 <strong>Sapphire-Bezel Heritage Timepiece</strong>[cite: 10]
                 <span>Royal Editorial Concept</span>

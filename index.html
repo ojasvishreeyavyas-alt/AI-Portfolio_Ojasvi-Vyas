@@ -24,6 +24,8 @@
       --accent-green: #16a34a;
       --accent-green-bg: #dcfce7;
       --accent-blue-bg: #e0f2fe;
+      --accent-amber-bg: #fef3c7;
+      --accent-amber: #b45309;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,7 +45,7 @@
       left: 0;
       right: 0;
       z-index: 100;
-      background: rgba(253, 251, 247, 0.85);
+      background: rgba(253, 251, 247, 0.88);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(24, 25, 27, 0.06);
       padding: 0.85rem 2rem;
@@ -96,7 +98,7 @@
     }
     .btn-nav:hover { background: var(--text-teal); transform: translateY(-1px); }
 
-    /* HERO SECTION — Exact match to your screenshot */
+    /* HERO SECTION */
     .hero {
       min-height: 92vh;
       display: flex;
@@ -237,7 +239,7 @@
     .projects-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 4rem;
+      gap: 4.5rem;
     }
     .project-card {
       background: var(--bg-card);
@@ -257,7 +259,7 @@
       align-items: flex-start;
       gap: 1rem;
       flex-wrap: wrap;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
     }
     .proj-index {
       font-family: 'JetBrains Mono', monospace;
@@ -359,6 +361,64 @@
       color: var(--text-muted);
     }
 
+    /* Visual Architecture 4-Step Flow */
+    .arch-flow {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+    @media (max-width: 860px) {
+      .arch-flow { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 520px) {
+      .arch-flow { grid-template-columns: 1fr; }
+    }
+    .arch-node {
+      background: var(--bg-page);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.15rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .arch-node-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .arch-step-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 600;
+      color: var(--accent-gold);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+    .arch-tool-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      background: var(--bg-subtle);
+      color: var(--text-teal);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+    }
+    .arch-node h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.25rem;
+    }
+    .arch-node p {
+      font-size: 0.78rem;
+      color: var(--text-body);
+      line-height: 1.45;
+    }
+
     /* Visual Dashboard Split */
     .visual-split {
       display: grid;
@@ -393,7 +453,7 @@
       font-weight: 600;
     }
 
-    /* Mock Intelligence Table */
+    /* Intelligence & Matrix Tables */
     .intel-table {
       width: 100%;
       border-collapse: collapse;
@@ -422,6 +482,7 @@
       font-weight: 600;
       padding: 0.2rem 0.5rem;
       border-radius: 6px;
+      white-space: nowrap;
     }
     .pill-type {
       background: var(--accent-blue-bg);
@@ -430,6 +491,17 @@
       font-weight: 600;
       padding: 0.2rem 0.55rem;
       border-radius: 6px;
+      white-space: nowrap;
+    }
+    .pill-gold {
+      background: var(--accent-amber-bg);
+      color: var(--accent-amber);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      white-space: nowrap;
     }
 
     /* Bar Chart Comparison */
@@ -456,47 +528,24 @@
       background: var(--text-teal);
     }
     .bar-fill.gold { background: var(--accent-gold); }
+    .bar-fill.green { background: var(--accent-green); }
     .bar-fill.muted { background: #9ca3af; }
 
-    /* Visual Pipeline Nodes (Project 02) */
-    .pipeline-visual {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-    @media (max-width: 860px) {
-      .pipeline-visual { grid-template-columns: repeat(2, 1fr); }
-    }
-    @media (max-width: 520px) {
-      .pipeline-visual { grid-template-columns: 1fr; }
-    }
-    .pipe-step {
-      background: var(--bg-page);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 1.25rem;
-      position: relative;
-    }
-    .pipe-step-num {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--accent-gold);
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-      display: block;
-    }
-    .pipe-step h4 {
-      font-size: 0.98rem;
-      margin-bottom: 0.35rem;
-      color: var(--text-dark);
-    }
-    .pipe-step p {
-      font-size: 0.8rem;
-      color: var(--text-body);
-    }
-
     /* 3D Luxury Media Grid (Project 03) */
+    .media-section-label {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.9rem;
+    }
+    .media-section-label span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
     .media-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -597,7 +646,7 @@
     </div>
   </nav>
 
-  <!-- HERO SECTION (Exact Visual Match to Screenshot) -->
+  <!-- HERO SECTION -->
   <header class="hero">
     <div class="hero-inner">
       <div class="hero-avatar-ring">
@@ -620,7 +669,7 @@
           Launch Opportunity Desk ✦
         </a>
         <a href="#opportunity-desk" class="btn-secondary">
-          View System Metrics ↓
+          Explore System Metrics ↓
         </a>
       </div>
     </div>
@@ -629,7 +678,7 @@
   <!-- SELECTED SYSTEMS & METRICS -->
   <main class="container">
     <div class="section-head">
-      <span>SYSTEMS &amp; PERFORMANCE</span>
+      <span>SYSTEMS &amp; PERFORMANCE DASHBOARDS</span>
       <h2>Selected AI Architectures</h2>
     </div>
 
@@ -682,12 +731,48 @@
           </div>
         </div>
 
+        <!-- 4-Node Sourcing Architecture -->
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">01. Define</span>
+              <span class="arch-tool-badge">ICP Gate</span>
+            </div>
+            <h4>Market &amp; Buyer Blueprint</h4>
+            <p>Locks in revenue targets, geography, and hard inclusion/rejection rules.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">02. Scan</span>
+              <span class="arch-tool-badge">Global Network</span>
+            </div>
+            <h4>Multi-Channel Discovery</h4>
+            <p>Maps direct buyers, regional distributors, and niche manufacturers.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">03. Verify</span>
+              <span class="arch-tool-badge">AI + Human QC</span>
+            </div>
+            <h4>Fit Scoring &amp; Vetting</h4>
+            <p>Scores company relevance and verifies decision-maker contact paths.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">04. Convert</span>
+              <span class="arch-tool-badge">GTM Deliverable</span>
+            </div>
+            <h4>Actionable Pipeline</h4>
+            <p>Delivers ranked targets with custom outreach angles ready for sales.</p>
+          </div>
+        </div>
+
         <!-- Visual Intelligence Table + Efficiency Graph -->
         <div class="visual-split">
           <div class="ui-panel">
             <div class="ui-panel-header">
-              <span class="ui-panel-title">Sample Opportunity Pipeline Deliverable</span>
-              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent-green);">● ICP Gate Active</span>
+              <span class="ui-panel-title">Live Opportunity Pipeline Sample</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent-green);">● Hard ICP Gates Active</span>
             </div>
             <table class="intel-table">
               <thead>
@@ -696,7 +781,7 @@
                   <th>Channel Type</th>
                   <th>Region</th>
                   <th>ICP Fit</th>
-                  <th>Action</th>
+                  <th>Next Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -716,14 +801,14 @@
                 </tr>
                 <tr>
                   <td>Meridian B2B Group</td>
-                  <td><span class="pill-type">Enterprise Buyer</span></td>
+                  <td><span class="pill-type">Enterprise Client</span></td>
                   <td>APAC / India</td>
                   <td><span class="pill-match">91% Match</span></td>
                   <td>Custom Deck</td>
                 </tr>
                 <tr>
-                  <td>Vanguard Holdings</td>
-                  <td><span class="pill-type">Strategic Partner</span></td>
+                  <td>Vanguard Operators</td>
+                  <td><span class="pill-type">Acquisition Buyer</span></td>
                   <td>North America</td>
                   <td><span class="pill-match">89% Match</span></td>
                   <td>Warm Outreach</td>
@@ -734,14 +819,14 @@
 
           <div class="ui-panel">
             <div class="ui-panel-header">
-              <span class="ui-panel-title">Prospecting Impact Benchmark</span>
+              <span class="ui-panel-title">Prospecting Efficiency Benchmark</span>
             </div>
             <div class="bar-group">
               <div class="bar-label-row">
                 <span>Opportunity Desk (AI + Verified)</span>
                 <span style="color:var(--text-teal);">14 hrs / 100 leads</span>
               </div>
-              <div class="bar-track"><div class="bar-fill" style="width: 48%;"></div></div>
+              <div class="bar-track"><div class="bar-fill" style="width: 46%;"></div></div>
             </div>
             <div class="bar-group">
               <div class="bar-label-row">
@@ -750,4 +835,426 @@
               </div>
               <div class="bar-track"><div class="bar-fill muted" style="width: 95%;"></div></div>
             </div>
-            <div class="bar-group
+            <div class="bar-group" style="margin-top:1.3rem;margin-bottom:0;">
+              <div class="bar-label-row">
+                <span>Lead Qualification Precision</span>
+                <span style="color:var(--accent-green);">92% ICP Fit</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill green" style="width: 92%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="tag-list">
+            <span class="tag-chip">B2B Buyer Intelligence</span>
+            <span class="tag-chip">Distributor &amp; Manufacturer Discovery</span>
+            <span class="tag-chip">ICP Qualification Gates</span>
+            <span class="tag-chip">Go-To-Market Pipeline</span>
+          </div>
+          <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-primary">
+            Visit Opportunity Desk ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- ========================================================
+           PROJECT 02: AI CONTENT RESEARCH PIPELINE
+      ========================================================= -->
+      <article id="content-pipeline" class="project-card">
+        <div class="proj-top">
+          <div>
+            <span class="proj-index">02 // AUTONOMOUS CONTENT SYSTEMS</span>
+            <h3 class="proj-title">AI Content Research Pipeline</h3>
+          </div>
+          <span class="live-badge"><span class="live-dot"></span> Automated Workflow</span>
+        </div>
+
+        <div class="one-liner-grid">
+          <div class="liner-box problem">
+            <strong>The Bottleneck</strong>
+            Creative teams lose 70% of their week to fragmented trend hunting, spreadsheet sorting, and manual Google Drive filing.
+          </div>
+          <div class="liner-box solution">
+            <strong>The Automation Engine</strong>
+            Scrapes live signals, scores and selects the Top 3 ideas per cycle, generates drafts, and auto-organizes Google Docs.
+          </div>
+        </div>
+
+        <!-- 4 Visual KPI Cards for Content Pipeline -->
+        <div class="kpi-grid">
+          <div class="kpi-box">
+            <div class="kpi-num">Top 3</div>
+            <div class="kpi-title">High-Signal Selection</div>
+            <div class="kpi-sub">Auto-ranked from 50+ raw trend ideas</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num">11,000+</div>
+            <div class="kpi-title">Early Channel Views</div>
+            <div class="kpi-sub">Across 22 videos in a 2-week sprint</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num">75%</div>
+            <div class="kpi-title">Admin Time Saved</div>
+            <div class="kpi-sub">Eliminates manual copy-pasting &amp; filing</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num">100%</div>
+            <div class="kpi-title">Workspace Synced</div>
+            <div class="kpi-sub">Google Sheets → Docs → Drive</div>
+          </div>
+        </div>
+
+        <!-- 4-Node Content Pipeline Architecture -->
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">01. Ingest</span>
+              <span class="arch-tool-badge">Scraper → Sheets</span>
+            </div>
+            <h4>Signal Collection</h4>
+            <p>Scrapes emerging industry hooks and stores candidate rows in Google Sheets.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">02. Analyze</span>
+              <span class="arch-tool-badge">LLM Trend Scorer</span>
+            </div>
+            <h4>Top-3 Idea Selection</h4>
+            <p>Scores candidates on trend velocity &amp; audience fit to lock in the top 3 winners.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">03. Draft</span>
+              <span class="arch-tool-badge">AI Content Node</span>
+            </div>
+            <h4>Structured Scripting</h4>
+            <p>Generates hook-driven scripts and outlines ready for human creative polish.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">04. Organize</span>
+              <span class="arch-tool-badge">Docs &amp; Drive API</span>
+            </div>
+            <h4>Auto-Filing &amp; Tracking</h4>
+            <p>Saves formatted drafts into Google Docs/Drive and updates sheet status.</p>
+          </div>
+        </div>
+
+        <!-- Visual Scoring Table + Bandwidth Shift Graph -->
+        <div class="visual-split">
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <span class="ui-panel-title">Live Sheet → AI Trend Prioritization Matrix</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--text-teal);">Sprint Cycle #14</span>
+            </div>
+            <table class="intel-table">
+              <thead>
+                <tr>
+                  <th>Scraped Topic Candidate</th>
+                  <th>Trend Score</th>
+                  <th>ICP Relevance</th>
+                  <th>Automated Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>AI Agents in B2B Pre-Sales</td>
+                  <td>9.4 / 10</td>
+                  <td><span class="pill-type">Founders / GTM</span></td>
+                  <td><span class="pill-match">Selected #1 → Docs</span></td>
+                </tr>
+                <tr>
+                  <td>Gita Frameworks for Leadership</td>
+                  <td>9.1 / 10</td>
+                  <td><span class="pill-type">Professionals</span></td>
+                  <td><span class="pill-match">Selected #2 → Docs</span></td>
+                </tr>
+                <tr>
+                  <td>3D Generative Commercial ROI</td>
+                  <td>8.8 / 10</td>
+                  <td><span class="pill-type">Luxury D2C</span></td>
+                  <td><span class="pill-match">Selected #3 → Docs</span></td>
+                </tr>
+                <tr>
+                  <td>Generic ChatGPT Prompt Lists</td>
+                  <td>3.8 / 10</td>
+                  <td><span class="pill-gold">Saturated</span></td>
+                  <td><span style="color:var(--text-muted);font-size:0.75rem;">Filtered Out</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <span class="ui-panel-title">Creative Bandwidth Reclaimed</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label-row">
+                <span>Original Creative &amp; Editorial Polish</span>
+                <span style="color:var(--text-teal);">75% Bandwidth</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 75%;"></div></div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label-row">
+                <span>Manual Scraping, Sorting &amp; Filing</span>
+                <span style="color:var(--text-muted);">Cut to 15%</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill gold" style="width: 15%;"></div></div>
+            </div>
+            <div class="bar-group" style="margin-top:1.3rem;margin-bottom:0;">
+              <div class="bar-label-row">
+                <span>Sprint Publishing Consistency</span>
+                <span style="color:var(--accent-green);">22 Videos / 14 Days</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill green" style="width: 90%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="tag-list">
+            <span class="tag-chip">Trend Analysis</span>
+            <span class="tag-chip">Automated Idea Selection</span>
+            <span class="tag-chip">AI Drafting</span>
+            <span class="tag-chip">Google Sheets &amp; Drive Organization</span>
+          </div>
+          <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+            Request Workflow Architecture ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- ========================================================
+           PROJECT 03: AI-ASSISTED 3D PRODUCT FILMS
+      ========================================================= -->
+      <article id="product-films" class="project-card">
+        <div class="proj-top">
+          <div>
+            <span class="proj-index">03 // GENERATIVE LUXURY PRODUCTION</span>
+            <h3 class="proj-title">AI-Assisted 3D Product Films</h3>
+          </div>
+          <span class="live-badge"><span class="live-dot"></span> Commercial Studio Workflow</span>
+        </div>
+
+        <div class="one-liner-grid">
+          <div class="liner-box problem">
+            <strong>The Bottleneck</strong>
+            Luxury brands need royal, macro-level product storytelling, but physical studio shoots demand massive budgets and slow timelines.
+          </div>
+          <div class="liner-box solution">
+            <strong>The Production Engine</strong>
+            Blends 3D macro rendering, studio lighting direction, and generative motion (Veo, Runway, Pika, Krea) into bespoke commercial films.
+          </div>
+        </div>
+
+        <!-- 4 Visual KPI Cards for 3D Product Films -->
+        <div class="kpi-grid">
+          <div class="kpi-box">
+            <div class="kpi-num">10x</div>
+            <div class="kpi-title">Faster Turnaround</div>
+            <div class="kpi-sub">From brand brief to final macro cut</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num">~70%</div>
+            <div class="kpi-title">Production Savings</div>
+            <div class="kpi-sub">Versus physical luxury studio shoots</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num">4K Macro</div>
+            <div class="kpi-title">Optical Fidelity</div>
+            <div class="kpi-sub">Tourbillon gears, brushed steel &amp; velvet</div>
+          </div>
+          <div class="kpi-box">
+            <div class="kpi-num">Hybrid</div>
+            <div class="kpi-title">3D + Generative AI</div>
+            <div class="kpi-sub">Veo, Runway, Pika, Krea &amp; ElevenLabs</div>
+          </div>
+        </div>
+
+        <!-- 4-Node 3D Production Architecture -->
+        <div class="arch-flow">
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">01. Concept</span>
+              <span class="arch-tool-badge">Art Direction</span>
+            </div>
+            <h4>Royal Visual Brief</h4>
+            <p>Translates luxury brand positioning into macro camera moves and lighting scripts.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">02. Render</span>
+              <span class="arch-tool-badge">3D + Krea.ai</span>
+            </div>
+            <h4>Macro Dial &amp; Material</h4>
+            <p>Builds rose-gold chronographs, sapphire bezels, and split-light studio frames.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">03. Animate</span>
+              <span class="arch-tool-badge">Veo / Runway / Pika</span>
+            </div>
+            <h4>Generative Motion</h4>
+            <p>Generates sweeping light reflections, gear movement, and cinematic pacing.</p>
+          </div>
+          <div class="arch-node">
+            <div class="arch-node-top">
+              <span class="arch-step-tag">04. Master</span>
+              <span class="arch-tool-badge">ElevenLabs + Edit</span>
+            </div>
+            <h4>Sound &amp; Final Cut</h4>
+            <p>Layers bespoke mechanical acoustics, voice synthesis, and color grading.</p>
+          </div>
+        </div>
+
+        <!-- 2x2 Embedded Media Gallery (Wired to Exact GitHub Filenames) -->
+        <div class="media-section-label">
+          <span>FEATURED LUXURY TIMEPIECE FILMS &amp; ROYAL RENDERS</span>
+          <span style="color:var(--text-teal);">4 Commercial Artifacts</span>
+        </div>
+
+        <div class="media-grid">
+          <!-- Video 1 -->
+          <div class="media-card">
+            <video controls autoplay muted loop playsinline preload="metadata">
+              <source src="./Watch%20video1.mp4" type="video/mp4">
+            </video>
+            <div class="media-bar">
+              <strong>Iridescent Skeleton Tourbillon (Invicta)</strong>
+              <span>3D + AI Motion Film</span>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="media-card">
+            <video controls autoplay muted loop playsinline preload="metadata">
+              <source src="./Watch_Video_Storyline_Generation.mp4" type="video/mp4">
+            </video>
+            <div class="media-bar">
+              <strong>"Precision in Every Second" Monolith</strong>
+              <span>Veo Commercial Spot</span>
+            </div>
+          </div>
+
+          <!-- Image 1 -->
+          <div class="media-card">
+            <img src="./watches_are_not_giving_royal_feel_royal_feels_not_coming_royal_needed_better_cczblohlc6s5qzly4jog_1.png" alt="Rose-Gold & Alligator Chronograph">
+            <div class="media-bar">
+              <strong>Rose-Gold &amp; Alligator Chronograph</strong>
+              <span>Studio Split-Light Render</span>
+            </div>
+          </div>
+
+          <!-- Image 2 -->
+          <div class="media-card">
+            <img src="./watches_are_not_giving_royal_feel_royal_feels_not_coming_royal_needed_better_xmligk7ta7eypdjfntn2_0.png" alt="Sapphire-Bezel Heritage Timepiece">
+            <div class="media-bar">
+              <strong>Sapphire-Bezel Heritage Timepiece</strong>
+              <span>Royal Velvet Editorial</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Production Breakdown Matrix + Cost/Speed Graph -->
+        <div class="visual-split">
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <span class="ui-panel-title">Commercial Asset Production Matrix</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent-gold);">● Hybrid Pipeline</span>
+            </div>
+            <table class="intel-table">
+              <thead>
+                <tr>
+                  <th>Deliverable Artifact</th>
+                  <th>Visual Style</th>
+                  <th>Primary Stack</th>
+                  <th>Format</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Invicta Skeleton Tourbillon</td>
+                  <td><span class="pill-type">Iridescent Macro</span></td>
+                  <td>3D Render + AI Motion</td>
+                  <td><span class="pill-match">9s Ad Film</span></td>
+                </tr>
+                <tr>
+                  <td>"Precision in Every Second"</td>
+                  <td><span class="pill-type">Monolith Brushed Steel</span></td>
+                  <td>Veo + Post-Production</td>
+                  <td><span class="pill-match">8s Spot</span></td>
+                </tr>
+                <tr>
+                  <td>Rolersonie Rose-Gold Chrono</td>
+                  <td><span class="pill-gold">Split-Light Studio</span></td>
+                  <td>Krea.ai + Lighting Pass</td>
+                  <td><span class="pill-match">4K Still</span></td>
+                </tr>
+                <tr>
+                  <td>Sapphire Heritage Cushion</td>
+                  <td><span class="pill-gold">Royal Velvet Editorial</span></td>
+                  <td>Generative Staging</td>
+                  <td><span class="pill-match">4K Campaign</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="ui-panel">
+            <div class="ui-panel-header">
+              <span class="ui-panel-title">Studio Production vs. Hybrid AI</span>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label-row">
+                <span>Hybrid 3D + AI Delivery Speed</span>
+                <span style="color:var(--text-teal);">2–3 Days / Campaign</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width: 25%;"></div></div>
+            </div>
+            <div class="bar-group">
+              <div class="bar-label-row">
+                <span>Traditional Physical Watch Shoot</span>
+                <span style="color:var(--text-muted);">3–5 Weeks</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill muted" style="width: 95%;"></div></div>
+            </div>
+            <div class="bar-group" style="margin-top:1.3rem;margin-bottom:0;">
+              <div class="bar-label-row">
+                <span>Visual Iteration Flexibility</span>
+                <span style="color:var(--accent-gold);">Unlimited Angles</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill gold" style="width: 96%;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <div class="tag-list">
+            <span class="tag-chip">Generative Tools</span>
+            <span class="tag-chip">Premium Product Storytelling</span>
+            <span class="tag-chip">Veo / Runway / Pika</span>
+            <span class="tag-chip">Krea.ai &amp; ElevenLabs</span>
+          </div>
+          <a href="mailto:ojasvishreeyavyas@gmail.com" class="btn-primary">
+            Book Commercial Production ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 Ojasvi Vyas &bull;
+      <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer">LinkedIn</a> &bull;
+      <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer">Opportunity Desk</a> &bull;
+      <a href="mailto:ojasvishreeyavyas@gmail.com">ojasvishreeyavyas@gmail.com</a>
+    </p>
+  </footer>
+
+</body>
+</html>

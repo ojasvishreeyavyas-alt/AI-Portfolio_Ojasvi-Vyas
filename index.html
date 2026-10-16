@@ -29,273 +29,7 @@
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { 
-      scroll-behavior: smooth; 
-      scroll-padding-top: 96px;
-    }
-    body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-dark);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Fixed Top Navbar */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 1000;
-      background: rgba(253, 251, 247, 0.92);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(24, 25, 27, 0.08);
-      padding: 0.85rem 2rem;
-    }
-    .nav-container {
-      max-width: 1220px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 0.65rem;
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: 1.55rem;
-      color: var(--text-dark);
-      text-decoration: none;
-    }
-    .brand img {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 1px solid var(--border);
-    }
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      font-size: 0.88rem;
-      font-weight: 500;
-    }
-    .nav-links a:not(.btn-nav) {
-      color: var(--text-body);
-      text-decoration: none;
-      transition: color 0.2s;
-      cursor: pointer;
-    }
-    .nav-links a:not(.btn-nav):hover { color: var(--text-dark); }
-    .btn-nav {
-      background: var(--text-dark);
-      color: #fff;
-      padding: 0.55rem 1.15rem;
-      border-radius: 99px;
-      font-weight: 600;
-      font-size: 0.84rem;
-      text-decoration: none;
-      transition: transform 0.2s, background 0.2s;
-    }
-    .btn-nav:hover { background: var(--text-teal); transform: translateY(-1px); }
-
-    /* HERO SECTION */
-    .hero {
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 7.5rem 1.5rem 5rem 1.5rem;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 88% 82%, rgba(206, 229, 242, 0.85) 0%, rgba(206, 229, 242, 0) 48%),
-        radial-gradient(circle at 50% 42%, rgba(251, 232, 206, 0.9) 0%, rgba(253, 251, 247, 0) 65%),
-        linear-gradient(180deg, #fbf9f4 0%, #faefe0 55%, #f5f7f9 100%);
-      border-bottom: 1px solid var(--border);
-    }
-    .hero-inner {
-      max-width: 820px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 2;
-    }
-    .hero-avatar-ring {
-      width: 196px;
-      height: 196px;
-      border-radius: 50%;
-      padding: 6px;
-      background: #ffffff;
-      box-shadow: 0 18px 45px rgba(24, 25, 27, 0.08);
-      margin-bottom: 2.2rem;
-    }
-    .hero-avatar-ring img {
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      object-fit: cover;
-      display: block;
-    }
-    .hero-pill {
-      display: inline-block;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.22em;
-      padding: 0.48rem 1.35rem;
-      border-radius: 99px;
-      background: #ffffff;
-      border: 1px solid rgba(24, 25, 27, 0.08);
-      color: var(--text-body);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-      margin-bottom: 1.75rem;
-    }
-    .hero h1 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-weight: 400;
-      font-size: clamp(3.4rem, 7.5vw, 5.8rem);
-      line-height: 1.03;
-      letter-spacing: -0.015em;
-      color: var(--text-dark);
-      margin-bottom: 1.75rem;
-    }
-    .hero h1 .italic-teal {
-      font-style: italic;
-      color: var(--text-teal);
-      display: block;
-    }
-    .hero-subtitle {
-      font-size: 1.08rem;
-      color: var(--text-body);
-      max-width: 580px;
-      line-height: 1.65;
-      margin-bottom: 2.25rem;
-      font-weight: 400;
-    }
-    .hero-cta-row {
-      display: flex;
-      gap: 0.85rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .btn-primary {
-      background: var(--text-dark);
-      color: #ffffff;
-      padding: 0.8rem 1.6rem;
-      border-radius: 99px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      box-shadow: 0 10px 24px rgba(24, 25, 27, 0.12);
-      transition: all 0.2s;
-    }
-    .btn-primary:hover { background: var(--text-teal); transform: translateY(-2px); }
-    .btn-secondary {
-      background: #ffffff;
-      color: var(--text-dark);
-      border: 1px solid var(--border-strong);
-      padding: 0.8rem 1.6rem;
-      border-radius: 99px;
-      font-weight: 600;
-      font-size: 0.9rem;
-      text-decoration: none;
-      transition: all 0.2s;
-    }
-    .btn-secondary:hover { background: var(--bg-subtle); }
-
-    /* MAIN CONTAINER */
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 5rem 1.5rem 6rem 1.5rem;
-    }
-    .section-head {
-      text-align: center;
-      margin-bottom: 4rem;
-    }
-    .section-head span {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--accent-gold);
-      font-weight: 600;
-    }
-    .section-head h2 {
-      font-family: 'Instrument Serif', Georgia, serif;
-      font-size: clamp(2.4rem, 4.5vw, 3.5rem);
-      font-weight: 400;
-      color: var(--text-dark);
-      margin-top: 0.35rem;
-    }
-
-    /* PROJECT SHOWCASE CARDS */
-    .projects-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 4.5rem;
-    }
-    .project-card {
-      scroll-margin-top: 100px;
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 3rem;
-      box-shadow: 0 16px 48px rgba(24Here is the complete, fixed `index.html` code with all three projects (**01. The Opportunity Desk**, **02. AI Content Research Pipeline**, and **03. AI-Assisted 3D Product Films**) stacked sequentially on the page[cite: 1, 2, 21]. 
-
-I also fixed two things that showed up in your screenshot:
-1. **Smooth Scroll Offset (`scroll-margin-top: 100px`)**: When you click `01. Opportunity Desk`, `02. Content Pipeline`, or `03. 3D Product Films` in the top navigation bar, the sticky header will no longer cover up the top of the project card[cite: 21].
-2. **Guaranteed Full-Page Paste**: Make sure you click the **Copy** icon in the top-right corner of the code block below so all 3 projects copy over completely without getting cut off midway.
-
-### How to Replace the Code on GitHub (30 Seconds)
-1. Open your GitHub repository and click on **`index.html`**[cite: 5, 20].
-2. Click the **Pencil icon (Edit this file)** in the top right.
-3. Click inside the code editor, press **`Ctrl + A`** (Select All), and press **`Delete`** so the file is completely empty.
-4. Click the **Copy** button on the code block below, paste (`Ctrl + V`) it into GitHub, and click the green **`Commit changes...`** button.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ojasvi Vyas | AI and Growth Strategist</title>
-  <meta name="description" content="Ideas remain original. Automate what's repetitive! AI Portfolio by Ojasvi Vyas.">
-  <link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-  <link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin>
-  <link href="[https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap)" rel="stylesheet">
-  <style>
-    :root {
-      --bg-page: #fdfbf7;
-      --bg-card: #ffffff;
-      --bg-subtle: #f5f0e6;
-      --bg-dark: #121519;
-      --border: #e8e1d5;
-      --border-strong: #d5cbb8;
-      --text-dark: #18191b;
-      --text-teal: #234b5e;
-      --text-body: #525860;
-      --text-muted: #848a92;
-      --accent-gold: #c88a4b;
-      --accent-green: #16a34a;
-      --accent-green-bg: #dcfce7;
-      --accent-blue-bg: #e0f2fe;
-      --accent-amber-bg: #fef3c7;
-      --accent-amber: #b45309;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; scroll-padding-top: 96px; }
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
       background-color: var(--bg-page);
@@ -508,7 +242,7 @@ I also fixed two things that showed up in your screenshot:
       gap: 4.5rem;
     }
     .project-card {
-      scroll-margin-top: 100px; /* Prevents sticky navbar from overlapping title */
+      scroll-margin-top: 100px;
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 24px;
@@ -517,7 +251,7 @@ I also fixed two things that showed up in your screenshot:
     }
     @media (max-width: 768px) {
       .project-card { padding: 1.75rem; }
-      .nav-links { gap: 1rem; }
+      .nav-links { gap: 0.8rem; font-size: 0.78rem; }
     }
 
     .proj-top {
@@ -905,7 +639,7 @@ I also fixed two things that showed up in your screenshot:
         <a href="#opportunity-desk">01. Opportunity Desk</a>
         <a href="#content-pipeline">02. Content Pipeline</a>
         <a href="#product-films">03. 3D Product Films</a>
-        <a href="[https://www.linkedin.com/in/ojasvi-vyas-8a55111bb](https://www.linkedin.com/in/ojasvi-vyas-8a55111bb)" target="_blank" rel="noopener noreferrer" class="btn-nav">
+        <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-nav">
           LinkedIn ↗
         </a>
       </div>
@@ -1121,7 +855,7 @@ I also fixed two things that showed up in your screenshot:
             <span class="tag-chip">ICP Qualification Gates</span>
             <span class="tag-chip">Go-To-Market Pipeline</span>
           </div>
-          <a href="[https://opportunity-desk.savorynote2.chatgpt.site](https://opportunity-desk.savorynote2.chatgpt.site)" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer" class="btn-primary">
             Visit Opportunity Desk Website ↗
           </a>
         </div>
@@ -1290,7 +1024,7 @@ I also fixed two things that showed up in your screenshot:
             <span class="tag-chip">AI Drafting</span>
             <span class="tag-chip">Google Sheets &amp; Drive Organization</span>
           </div>
-          <a href="[https://www.linkedin.com/in/ojasvi-vyas-8a55111bb](https://www.linkedin.com/in/ojasvi-vyas-8a55111bb)" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+          <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer" class="btn-secondary">
             Discuss Workflow Architecture ↗
           </a>
         </div>
@@ -1519,8 +1253,8 @@ I also fixed two things that showed up in your screenshot:
   <footer>
     <p>
       &copy; 2026 Ojasvi Vyas &bull;
-      <a href="[https://www.linkedin.com/in/ojasvi-vyas-8a55111bb](https://www.linkedin.com/in/ojasvi-vyas-8a55111bb)" target="_blank" rel="noopener noreferrer">LinkedIn</a> &bull;
-      <a href="[https://opportunity-desk.savorynote2.chatgpt.site](https://opportunity-desk.savorynote2.chatgpt.site)" target="_blank" rel="noopener noreferrer">Opportunity Desk</a> &bull;
+      <a href="https://www.linkedin.com/in/ojasvi-vyas-8a55111bb" target="_blank" rel="noopener noreferrer">LinkedIn</a> &bull;
+      <a href="https://opportunity-desk.savorynote2.chatgpt.site" target="_blank" rel="noopener noreferrer">Opportunity Desk</a> &bull;
       <a href="mailto:ojasvishreeyavyas@gmail.com">ojasvishreeyavyas@gmail.com</a>
     </p>
   </footer>
